@@ -36,6 +36,8 @@ public class Main extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
+        Opciones_Emp = new javax.swing.JPopupMenu();
+        Modif_Emp = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -59,7 +61,9 @@ public class Main extends javax.swing.JFrame {
 
         Tabla_Emp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
                 "ID", "Apellido", "Nombre", "Correo"
@@ -80,6 +84,7 @@ public class Main extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Tabla_Emp.setComponentPopupMenu(Opciones_Emp);
         Tabla_Emp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Tabla_EmpMouseClicked(evt);
@@ -293,6 +298,14 @@ public class Main extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        Modif_Emp.setText("Modificar");
+        Modif_Emp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Modif_EmpActionPerformed(evt);
+            }
+        });
+        Opciones_Emp.add(Modif_Emp);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -409,6 +422,14 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Tabla_EmpMouseClicked
 
+    private void Modif_EmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Modif_EmpActionPerformed
+        // Boton Modificar
+        try {
+            System.out.println("Fila Seleccionada: " + fila_select);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_Modif_EmpActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -445,6 +466,8 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Modif_Emp;
+    private javax.swing.JPopupMenu Opciones_Emp;
     private javax.swing.JTable Tabla_Emp;
     private javax.swing.JDialog Ventana_Curriculum;
     private javax.swing.JDialog Ventana_Empleados;
