@@ -39,6 +39,20 @@ public class Main extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        reg_PResidencia = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        reg_Estado = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        reg_Municipio = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        reg_Direccion = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        reg_Fijo = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        reg_Cel = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        reg_Email = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
@@ -236,20 +250,90 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(genMasc)
                     .addComponent(genFem))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Personales", jPanel4);
+
+        jLabel6.setText("Pais de Residencia");
+
+        jLabel10.setText("Estado/Departamento");
+
+        jLabel11.setText("Municipio");
+
+        jLabel12.setText("Ciudad/Calle/Colonia");
+
+        jLabel13.setText("Telefono");
+
+        jLabel14.setText("Celular");
+
+        jLabel15.setText("Correo Electrónico");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 719, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(reg_Direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(reg_PResidencia, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)
+                            .addComponent(reg_Estado, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11)
+                            .addComponent(reg_Municipio, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(156, 156, 156)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(reg_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14)
+                            .addComponent(reg_Cel, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)
+                            .addComponent(reg_Fijo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(221, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 313, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(reg_PResidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(reg_Fijo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(reg_Estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(reg_Cel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(reg_Municipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(reg_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(reg_Direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Familiares", jPanel5);
@@ -292,10 +376,10 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jButton5))
                 .addGap(18, 18, 18)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addComponent(jTabbedPane1)
+                .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addGap(44, 44, 44))
         );
 
         Ventana_Curriculum.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -529,10 +613,17 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -546,8 +637,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField reg_Apellido;
+    private javax.swing.JTextField reg_Cel;
+    private javax.swing.JTextField reg_Direccion;
+    private javax.swing.JTextField reg_Email;
+    private javax.swing.JTextField reg_Estado;
+    private javax.swing.JTextField reg_Fijo;
+    private javax.swing.JTextField reg_Municipio;
     private javax.swing.JTextField reg_Nacionalidad;
     private javax.swing.JTextField reg_Nombre;
+    private javax.swing.JTextField reg_PResidencia;
     // End of variables declaration//GEN-END:variables
     int fila_select = 0;
     boolean verify_reg = false;
