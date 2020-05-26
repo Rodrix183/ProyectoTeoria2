@@ -457,12 +457,16 @@ public class Main extends javax.swing.JFrame {
                 gen_selec = "";
             }
 
-            if (gen_selec != "" && reg_Nombre.getText() != null && reg_Apellido.getText() != null && reg_Nacionalidad.getText() != null) {
-                verify_reg = true;
-                JOptionPane.showMessageDialog(null, "Registrado con Exito");
-            } else {
+//            System.out.println("Nombre: " + reg_Nombre.getText());
+//            System.out.println("Apellido: " + reg_Apellido.getText());
+//            System.out.println("Nacionalidad: " + reg_Nacionalidad.getText());
+            if (gen_selec == "" ||  reg_Nombre.getText() == "" || reg_Apellido.getText() == "" || reg_Nacionalidad.getText() != "") {
                 verify_reg = false;
                 JOptionPane.showMessageDialog(null, "Error al registrarse!");
+            } else {
+                verify_reg = true;
+                JOptionPane.showMessageDialog(null, "Registrado con Exito");
+                
             }
 
         } catch (Exception e) {
