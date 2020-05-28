@@ -37,6 +37,7 @@ public class driverPrueba {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         final String databaseName = "AgenciaEmpleo";
         ConnectionString connectionString = new ConnectionString("mongodb+srv://mongoPower:waySecure1@tbd2-empleo-bfigs.mongodb.net/AgenciaEmpleo?retryWrites=true&w=majority");
         CodecRegistry pojoCodecRegistry = fromProviders(PojoCodecProvider.builder().automatic(true).build());
@@ -56,13 +57,16 @@ public class driverPrueba {
             database = mongoClient.getDatabase(databaseName);
             MongoCollection<Persona> collection = database.getCollection(collectionS, Persona.class);
 
-            collection.deleteOne(new Document("_id", "C3"));
+
+            collection.deleteOne(new Document("_id", "C4"));
             Persona p = new Persona();
-            p.setId("C3");
+            p.setId("C4");
             p.setNombre("Rafael Eduardo");
             p.setApellido("Flores Caceres");
             p.setNacionalidad("Honduras");
             p.setGenero("M");
+            
+            //Convertir de String A date
             DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date fechaN = null;
             try {
@@ -70,11 +74,13 @@ public class driverPrueba {
             } catch (ParseException ex) {
                 Logger.getLogger(DriverDB.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            
             p.setFechaNacimiento(fechaN);
             p.setTelefono("1122-6677");
             p.setCorreo("rafael@correo.com");
             
-            
+            //Direccion
             Direccion d = new Direccion();
             d.setPais("Honduras");
             d.setDepart("Fco.Morazan");
@@ -82,7 +88,7 @@ public class driverPrueba {
             d.setColonia("Col. Cerro Grande");
             p.setDireccion(d);
             
-            
+            //Dato Familiar
             List<DatoFamiliar> df = new ArrayList<>();
             DatoFamiliar df1 = new DatoFamiliar();
             df1.setId("C1");
@@ -94,7 +100,7 @@ public class driverPrueba {
             df.add(df2);
             p.setRefFamiliares(df);
             
-            
+            //Dato Legal
             DatoLegal dl = new DatoLegal();
             dl.setId("1234-1234-12345");
             dl.setEsMayor(true);
@@ -122,6 +128,8 @@ public class driverPrueba {
             h.setTecnicas(tecnicas);
             c.setHabilidaes(h);
             
+            
+            
             ExpLaboral el = new ExpLaboral();
             el.setAniosExp(1);
             el.setTrabajoAnterior("Jestereo");
@@ -140,13 +148,18 @@ public class driverPrueba {
             c.setDatAcademicos(da);
             p.setCurriculum(c);
             
-         
             DatoSanitario ds = new DatoSanitario();
             ds.setAlergia(false);
             ds.setProblemaRespiratorio(true);
             ds.setProblemaCardiaco(false); // Problema Cardiaco
             ds.setProblemaMental(false);
             p.setdSalud(ds);
+            
+            System.out.println(p.getdSalud().toString() + "\n" + p.getdLegales().toString());
+            
+            collection.withWriteConcern(WriteConcern.ACKNOWLEDGED);
+            collection.insertOne(p);
+            
 
 //            Persona p1 = new Persona();
 //            p1.setId("C2");
@@ -170,7 +183,7 @@ public class driverPrueba {
 //            d1.setMunicipio("Valle de Angeles");
 //            d1.setColonia("Col. Cerro Grande");
 //            p1.setDireccion(d);
-            collection.insertOne(p);
+            
             //collection.insertOne(p1);
 
         } catch (MongoException e) {

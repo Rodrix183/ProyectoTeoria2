@@ -10,11 +10,11 @@ import java.util.Objects;
 
 
 public class Persona {
-   private String _id,nombre, apellido, nacionalidad, genero, telefono, correo;
+   private String _id /*C1*/,nombre, apellido, nacionalidad, genero, telefono, correo;
    private Date fechaNacimiento;
    private Direccion direccion;
    private List<DatoFamiliar> refFamiliares;
-   private DatoLegal dLegales;
+   private DatoLegal legalesD;
    private Curriculum curriculum;
    private DatoSanitario dSalud;
 
@@ -103,11 +103,11 @@ public class Persona {
     }
 
     public DatoLegal getdLegales() {
-        return dLegales;
+        return legalesD;
     }
 
     public void setdLegales(DatoLegal dLegales) {
-        this.dLegales = dLegales;
+        this.legalesD = dLegales;
     }
 
     public Curriculum getCurriculum() {
@@ -128,7 +128,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "_id=" + _id + ", nombre=" + nombre + ", apellido=" + apellido + ", nacionalidad=" + nacionalidad + ", genero=" + genero + ", telefono=" + telefono + ", correo=" + correo + ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", refFamiliares=" + refFamiliares + ", dLegales=" + dLegales + ", curriculum=" + curriculum + ", dSalud=" + dSalud + '}';
+        return "Persona{" + "_id=" + _id + ", nombre=" + nombre + ", apellido=" + apellido + ", nacionalidad=" + nacionalidad + ", genero=" + genero + ", telefono=" + telefono + ", correo=" + correo + ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", refFamiliares=" + refFamiliares + ", dLegales=" + legalesD + ", curriculum=" + curriculum + ", dSalud=" + dSalud + '}';
     }
 
     @Override
@@ -144,7 +144,7 @@ public class Persona {
         hash = 23 * hash + Objects.hashCode(this.fechaNacimiento);
         hash = 23 * hash + Objects.hashCode(this.direccion);
         hash = 23 * hash + Objects.hashCode(this.refFamiliares);
-        hash = 23 * hash + Objects.hashCode(this.dLegales);
+        hash = 23 * hash + Objects.hashCode(this.legalesD);
         hash = 23 * hash + Objects.hashCode(this.curriculum);
         hash = 23 * hash + Objects.hashCode(this.dSalud);
         return hash;
@@ -192,7 +192,7 @@ public class Persona {
         if (!Objects.equals(this.refFamiliares, other.refFamiliares)) {
             return false;
         }
-        if (!Objects.equals(this.dLegales, other.dLegales)) {
+        if (!Objects.equals(this.legalesD, other.legalesD)) {
             return false;
         }
         if (!Objects.equals(this.curriculum, other.curriculum)) {

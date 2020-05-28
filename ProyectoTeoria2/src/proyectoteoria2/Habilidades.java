@@ -11,7 +11,7 @@ import java.util.Objects;
 
 public class Habilidades {
 
-    private List<String> idiomas;
+    private List<String> idiomas; 
     private List<String> tecnicas;
 
     public Habilidades() {

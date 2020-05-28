@@ -5,9 +5,20 @@
  */
 package proyectoteoria2;
 
+import java.util.Objects;
+
 public class DatoSanitario {
 
     private boolean alergia, problemaRespiratorio, problemaCardiaco, problemaMental;
+    private String prueba;
+
+    public String getPrueba() {
+        return prueba;
+    }
+
+    public void setPrueba(String prueba) {
+        this.prueba = prueba;
+    }
 
     public DatoSanitario() {
     }
@@ -46,16 +57,17 @@ public class DatoSanitario {
 
     @Override
     public String toString() {
-        return "DatoSanitario{" + "alergia=" + alergia + ", problemaRespiratorio=" + problemaRespiratorio + ", problemaardiaco=" + problemaCardiaco + ", problemaMental=" + problemaMental + '}';
+        return "DatoSanitario{" + "alergia=" + alergia + ", problemaRespiratorio=" + problemaRespiratorio + ", problemaCardiaco=" + problemaCardiaco + ", problemaMental=" + problemaMental + ", prueba=" + prueba + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + (this.alergia ? 1 : 0);
-        hash = 17 * hash + (this.problemaRespiratorio ? 1 : 0);
-        hash = 17 * hash + (this.problemaCardiaco ? 1 : 0);
-        hash = 17 * hash + (this.problemaMental ? 1 : 0);
+        int hash = 5;
+        hash = 79 * hash + (this.alergia ? 1 : 0);
+        hash = 79 * hash + (this.problemaRespiratorio ? 1 : 0);
+        hash = 79 * hash + (this.problemaCardiaco ? 1 : 0);
+        hash = 79 * hash + (this.problemaMental ? 1 : 0);
+        hash = 79 * hash + Objects.hashCode(this.prueba);
         return hash;
     }
 
@@ -83,7 +95,12 @@ public class DatoSanitario {
         if (this.problemaMental != other.problemaMental) {
             return false;
         }
+        if (!Objects.equals(this.prueba, other.prueba)) {
+            return false;
+        }
         return true;
     }
+
+    
 
 }
