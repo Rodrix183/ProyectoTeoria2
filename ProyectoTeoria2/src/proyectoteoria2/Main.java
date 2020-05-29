@@ -1,5 +1,6 @@
 package proyectoteoria2;
 
+import com.mongodb.BasicDBObject;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -106,6 +107,9 @@ public class Main extends javax.swing.JFrame {
         Si_Preso = new javax.swing.JRadioButton();
         No_Licencia = new javax.swing.JRadioButton();
         Si_Licencia = new javax.swing.JRadioButton();
+        jPanel10 = new javax.swing.JPanel();
+        box_GradoAcademy = new javax.swing.JComboBox<>();
+        jLabel34 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         Opciones_Emp = new javax.swing.JPopupMenu();
@@ -355,8 +359,7 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(IDDos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel30)
                             .addComponent(IDTres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(fecha_Reg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(fecha_Reg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reg_Nacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -545,7 +548,6 @@ public class Main extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(reg_NacFam, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(34, 34, 34)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lbl_Verify, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel22)
                                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -738,6 +740,34 @@ public class Main extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Datos Legales", jPanel9);
+
+        box_GradoAcademy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bachiller", "Licenciado", "Magíster", "Doctorado" }));
+
+        jLabel34.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel34.setText("Grado Académico");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel34)
+                    .addComponent(box_GradoAcademy, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(510, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box_GradoAcademy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(433, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Datos Académicos", jPanel10);
 
         jButton5.setText("Volver");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -935,30 +965,45 @@ public class Main extends javax.swing.JFrame {
             //Mayor
             if (Si_Mayor.isSelected()) {
                 Mayor = true;
-            }else{
+                MayorCadena = Si_Mayor.getText();
+            } else if (No_Mayor.isSelected()) {
                 Mayor = false;
+                MayorCadena = No_Mayor.getText();
+            } else {
+                Mayor = false;
+                MayorCadena = "";
             }
-            
+
             //Preso
             if (Si_Preso.isSelected()) {
                 Preso = true;
-            }else{
+                PresoCadena = Si_Preso.getText();
+            } else if (No_Preso.isSelected()) {
                 Preso = false;
+                PresoCadena = No_Preso.getText();
+            } else {
+                Preso = false;
+                PresoCadena = "";
             }
-            
+
             //Licencia
             if (Si_Licencia.isSelected()) {
                 Licencia = true;
-            }else{
+                LicenciaCadena = Si_Licencia.getText();
+            } else if (No_Licencia.isSelected()) {
                 Licencia = false;
+                LicenciaCadena = No_Licencia.getText();
+            } else {
+                Licencia = false;
+                LicenciaCadena = "";
             }
-            
-            
+
             SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
             String fechaCadena = sdf.format(new Date());
             if (gen_selec != "" && reg_Nombre.getText().length() > 0 && reg_Apellido.getText().length() > 0 && reg_Nacionalidad.getText().length() > 0
                     && fechaCadena != "" && reg_PResidencia.getText().length() > 0 && reg_Estado.getText().length() > 0 && reg_Municipio.getText().length() > 0
-                    && reg_Direccion.getText().length() > 0 && reg_Fijo.getText().length() > 0 && reg_Email.getText().length() > 0) {
+                    && reg_Direccion.getText().length() > 0 && reg_Fijo.getText().length() > 0 && reg_Email.getText().length() > 0 && PresoCadena != ""
+                    && MayorCadena != "" && LicenciaCadena != "") {
 
                 verify_reg = true;
                 JOptionPane.showMessageDialog(null, "Registrado con Exito");
@@ -968,19 +1013,18 @@ public class Main extends javax.swing.JFrame {
 
                 //crear nuevo empleado
                 String idPersona = "";
-                
+
                 boolean bandera = false;
                 //Verificar que el ID no se repita
                 do {
-                    
+
                     int random = (int) (Math.random() * 9999);
                     idPersona = "C" + random;
-                    Document d = new Document("_id",idPersona);
-                   // dbd.getPersonas(d);
-                    
+                    Document d = new Document("_id", idPersona);
+                    // dbd.getPersonas(d);
+
                 } while (bandera == false);
 
-                
                 Direccion address = new Direccion();
                 address.setPais(reg_PResidencia.getText());
                 address.setDepart(idPersona);
@@ -1007,11 +1051,9 @@ public class Main extends javax.swing.JFrame {
                 P.setDireccion(address);
 
                 //Aqui validar lo de la identidad
-                
                 id_actual = idPersona;
                 id_Mostrado.setText(idPersona);
-                
-                
+
             } else {
                 verify_reg = false;
                 JOptionPane.showMessageDialog(null, "Error al registrarse!");
@@ -1029,8 +1071,9 @@ public class Main extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // BUSCAR EL ID PARA AGREGAR FAMILIAR
 
-        List<Persona> verificarPers = dbd.getPersonas(gen_selec);
-        if (verificarPers.size() != 0) {
+        List<Persona> verificarPers = dbd.getPersonas(new Document("_id", verif_ID.getText()));
+        if (!verificarPers.isEmpty()) {
+
             verify_exist = true;
         } else {
             verify_exist = false;
@@ -1056,27 +1099,27 @@ public class Main extends javax.swing.JFrame {
 
     private void IDUnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IDUnoKeyTyped
         // Limite primeros 4 digitos
-        
+
         int limit = 4;
-        if (IDUno.getText().length()==limit) {
+        if (IDUno.getText().length() == limit) {
             evt.consume();
         }
     }//GEN-LAST:event_IDUnoKeyTyped
 
     private void IDDosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IDDosKeyTyped
         // Limite primeros 4 digitos
-        
+
         int limit = 4;
-        if (IDDos.getText().length()==limit) {
+        if (IDDos.getText().length() == limit) {
             evt.consume();
         }
     }//GEN-LAST:event_IDDosKeyTyped
 
     private void IDTresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IDTresKeyTyped
         // Limite primeros 5 digitos
-        
+
         int limit = 5;
-        if (IDTres.getText().length()==limit) {
+        if (IDTres.getText().length() == limit) {
             evt.consume();
         }
     }//GEN-LAST:event_IDTresKeyTyped
@@ -1130,6 +1173,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog Ventana_Empleados;
     private javax.swing.JDialog Ventana_Empresas;
     private javax.swing.JComboBox<String> box_Expectativa;
+    private javax.swing.JComboBox<String> box_GradoAcademy;
     private javax.swing.JComboBox<String> box_Parentesco;
     private javax.swing.JComboBox<String> box_TipoContrato;
     private javax.swing.JButton btn_AgregarFamiliar;
@@ -1175,6 +1219,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1182,6 +1227,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
