@@ -1,5 +1,6 @@
 package proyectoteoria2;
 
+import com.mongodb.BasicDBObject;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
+import org.bson.Document;
 
 public class Main extends javax.swing.JFrame {
 
@@ -794,8 +796,8 @@ public class Main extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // BUSCAR EL ID PARA AGREGAR FAMILIAR
         
-        List <Persona> verificarPers = dbd.getPersonas(gen_selec);
-        if (verificarPers.size()!= 0) {
+        List <Persona> verificarPers = dbd.getPersonas(new Document("_id", verif_ID.getText()));
+        if (!verificarPers.isEmpty()) {
             verify_exist = true;
         }else{
             verify_exist = false;

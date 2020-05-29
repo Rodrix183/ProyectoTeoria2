@@ -13,10 +13,12 @@ public class Persona {
    private String _id /*C1*/,nombre, apellido, nacionalidad, genero, telefono, correo;
    private Date fechaNacimiento;
    private Direccion direccion;
+   private String identidad;
+   private DatoSanitario dSalud;
    private List<DatoFamiliar> refFamiliares;
    private DatoLegal legalesD;
    private Curriculum curriculum;
-   private DatoSanitario dSalud;
+   
 
     public Persona(){
         
@@ -94,6 +96,14 @@ public class Persona {
         this.direccion = direccion;
     }
 
+    public String getIdentidad() {
+        return identidad;
+    }
+
+    public void setIdentidad(String identidad) {
+        this.identidad = identidad;
+    }
+
     public List<DatoFamiliar> getRefFamiliares() {
         return refFamiliares;
     }
@@ -102,12 +112,12 @@ public class Persona {
         this.refFamiliares = refFamiliares;
     }
 
-    public DatoLegal getdLegales() {
+    public DatoLegal getLegalesD() {
         return legalesD;
     }
 
-    public void setdLegales(DatoLegal dLegales) {
-        this.legalesD = dLegales;
+    public void setLegalesD(DatoLegal legalesD) {
+        this.legalesD = legalesD;
     }
 
     public Curriculum getCurriculum() {
@@ -125,28 +135,31 @@ public class Persona {
     public void setdSalud(DatoSanitario dSalud) {
         this.dSalud = dSalud;
     }
+    
+    
 
     @Override
     public String toString() {
-        return "Persona{" + "_id=" + _id + ", nombre=" + nombre + ", apellido=" + apellido + ", nacionalidad=" + nacionalidad + ", genero=" + genero + ", telefono=" + telefono + ", correo=" + correo + ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", refFamiliares=" + refFamiliares + ", dLegales=" + legalesD + ", curriculum=" + curriculum + ", dSalud=" + dSalud + '}';
+        return "Persona{" + "_id=" + _id + ", nombre=" + nombre + ", apellido=" + apellido + ", nacionalidad=" + nacionalidad + ", genero=" + genero + ", telefono=" + telefono + ", correo=" + correo + ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", identidad=" + identidad + ", refFamiliares=" + refFamiliares + ", legalesD=" + legalesD + ", curriculum=" + curriculum + ", dSalud=" + dSalud + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this._id);
-        hash = 23 * hash + Objects.hashCode(this.nombre);
-        hash = 23 * hash + Objects.hashCode(this.apellido);
-        hash = 23 * hash + Objects.hashCode(this.nacionalidad);
-        hash = 23 * hash + Objects.hashCode(this.genero);
-        hash = 23 * hash + Objects.hashCode(this.telefono);
-        hash = 23 * hash + Objects.hashCode(this.correo);
-        hash = 23 * hash + Objects.hashCode(this.fechaNacimiento);
-        hash = 23 * hash + Objects.hashCode(this.direccion);
-        hash = 23 * hash + Objects.hashCode(this.refFamiliares);
-        hash = 23 * hash + Objects.hashCode(this.legalesD);
-        hash = 23 * hash + Objects.hashCode(this.curriculum);
-        hash = 23 * hash + Objects.hashCode(this.dSalud);
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this._id);
+        hash = 97 * hash + Objects.hashCode(this.nombre);
+        hash = 97 * hash + Objects.hashCode(this.apellido);
+        hash = 97 * hash + Objects.hashCode(this.nacionalidad);
+        hash = 97 * hash + Objects.hashCode(this.genero);
+        hash = 97 * hash + Objects.hashCode(this.telefono);
+        hash = 97 * hash + Objects.hashCode(this.correo);
+        hash = 97 * hash + Objects.hashCode(this.fechaNacimiento);
+        hash = 97 * hash + Objects.hashCode(this.direccion);
+        hash = 97 * hash + Objects.hashCode(this.identidad);
+        hash = 97 * hash + Objects.hashCode(this.refFamiliares);
+        hash = 97 * hash + Objects.hashCode(this.legalesD);
+        hash = 97 * hash + Objects.hashCode(this.curriculum);
+        hash = 97 * hash + Objects.hashCode(this.dSalud);
         return hash;
     }
 
@@ -183,6 +196,9 @@ public class Persona {
         if (!Objects.equals(this.correo, other.correo)) {
             return false;
         }
+        if (!Objects.equals(this.identidad, other.identidad)) {
+            return false;
+        }
         if (!Objects.equals(this.fechaNacimiento, other.fechaNacimiento)) {
             return false;
         }
@@ -203,6 +219,5 @@ public class Persona {
         }
         return true;
     }
-
-    
+  
 }

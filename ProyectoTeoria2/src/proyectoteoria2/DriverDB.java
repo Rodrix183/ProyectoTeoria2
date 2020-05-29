@@ -57,13 +57,13 @@ public class DriverDB {
         database = mongoClient.getDatabase(databaseName);
     }
     
-    public List<Persona> getPersonas(String par){
+    public List<Persona> getPersonas(Document par){
         List<Persona> personas = null;
         try {
             crearConexion();
             MongoCollection<Persona> collection = database.getCollection("Persona", Persona.class);
-            if(par != ""){
-                personas = collection.find(new Document("curriculum", new BasicDBObject("$exists", false))).into(new ArrayList<>());
+            if(par != null){
+                personas = collection.find(par).into(new ArrayList<>());
             }else{
                 personas = collection.find().into(new ArrayList<>());
             }

@@ -55,32 +55,33 @@ public class driverPrueba {
             String collectionS = "Candidato";
             mongoClient = MongoClients.create(clientSettings);
             database = mongoClient.getDatabase(databaseName);
-            MongoCollection<DatoLegal> collection = database.getCollection(collectionS, DatoLegal.class);
+            MongoCollection<Persona> collection = database.getCollection(collectionS, Persona.class);
 
 
-            //collection.deleteOne(new Document("_id", "C4"));
-//            Persona p = new Persona();
-//            p.setId("C4");
-//            p.setNombre("Rafael Eduardo");
-//            p.setApellido("Flores Caceres");
-//            p.setNacionalidad("Honduras");
-//            p.setGenero("M");
-//            
-//            //Convertir de String A date
-//            DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-//            Date fechaN = null;
-//            try {
-//                fechaN = sdf.parse("22/08/1998");
-//            } catch (ParseException ex) {
-//                Logger.getLogger(DriverDB.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            
-//            
-//            p.setFechaNacimiento(fechaN);
-//            p.setTelefono("1122-6677");
-//            p.setCorreo("rafael@correo.com");
-//            
-//            //Direccion
+            collection.deleteOne(new Document("_id", "C4"));
+            Persona p = new Persona();
+            p.setId("C4");
+            p.setNombre("Rafael Eduardo");
+            p.setApellido("Flores Caceres");
+            p.setNacionalidad("Honduras");
+            p.setGenero("M");
+            
+            //Convertir de String A date
+            DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Date fechaN = null;
+            try {
+                fechaN = sdf.parse("22/08/1998");
+            } catch (ParseException ex) {
+                Logger.getLogger(DriverDB.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            
+            p.setFechaNacimiento(fechaN);
+            p.setTelefono("1122-6677");
+            p.setCorreo("rafael@correo.com");
+            p.setIdentidad("1234-1234-12345");
+            
+            //Direccion
 //            Direccion d = new Direccion();
 //            d.setPais("Honduras");
 //            d.setDepart("Fco.Morazan");
@@ -99,16 +100,15 @@ public class driverPrueba {
 //            df2.setParentesco("Hermana");
 //            df.add(df2);
 //            p.setRefFamiliares(df);
-            
-            //Dato Legal
-            DatoLegal dl = new DatoLegal();
-            dl.setId("1234-1234-12345");
-            dl.setEsMayor(true);
-            dl.setEstuvoPreso(false);
-            dl.setTieneLicencia(true);
-            //p.setdLegales(dl);
-            
-            
+//            
+//            //Dato Legal
+//            DatoLegal dl = new DatoLegal();
+//            dl.setEsMayor(true);
+//            dl.setEstuvoPreso(false);
+//            dl.setTieneLicencia(true);
+//            p.setLegalesD(dl);
+//            
+//            
 //            Curriculum c = new Curriculum();
 //            List<String> expLaboral = new ArrayList<>();
 //            expLaboral.add("Programador");
@@ -147,18 +147,18 @@ public class driverPrueba {
 //            da.setOtrosEstudios(estudioOtros);
 //            c.setDatAcademicos(da);
 //            p.setCurriculum(c);
-//            
-//            DatoSanitario ds = new DatoSanitario();
-//            ds.setAlergia(false);
-//            ds.setProblemaRespiratorio(true);
-//            ds.setProblemaCardiaco(false); // Problema Cardiaco
-//            ds.setProblemaMental(false);
-//            p.setdSalud(ds);
-//            
-//            System.out.println(p.getdSalud().toString() + "\n" + p.getdLegales().toString());
+            
+            DatoSanitario ds = new DatoSanitario();
+            ds.setAlergia(false);
+            ds.setProblemaRespiratorio(true);
+            ds.setProblemaCardiaco(false); // Problema Cardiaco
+            ds.setProblemaMental(false);
+            p.setdSalud(ds);
+            
+            System.out.println(p.getdSalud().toString());
             
             collection.withWriteConcern(WriteConcern.ACKNOWLEDGED);
-            collection.insertOne(dl);
+            collection.insertOne(p);
             
 
 //            Persona p1 = new Persona();
@@ -184,7 +184,7 @@ public class driverPrueba {
 //            d1.setColonia("Col. Cerro Grande");
 //            p1.setDireccion(d);
             
-            //collection.insertOne(p1);
+            //collection.insertOne(p);
 
         } catch (MongoException e) {
             e.printStackTrace();
