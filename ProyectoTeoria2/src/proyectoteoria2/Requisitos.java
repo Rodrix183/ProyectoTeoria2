@@ -11,9 +11,9 @@ class Requisitos {
     private DatoAcademico dAcademico;
     private ExpLaboral expLaboral;
     private DatoLegal dLegal;
-    private DatoSanitario dSanitario;
     private String sexo;
     private int edadMin;
+    private DatosSanitarios datosSanitarios;
 
     public Requisitos() {
     }
@@ -44,12 +44,12 @@ class Requisitos {
         this.dLegal = dLegal;
     }
 
-    public DatoSanitario getdSanitario() {
-        return dSanitario;
+    public DatosSanitarios getDatosSanitarios() {
+        return datosSanitarios;
     }
 
-    public void setdSanitario(DatoSanitario dSanitario) {
-        this.dSanitario = dSanitario;
+    public void setDatosSanitarios(DatosSanitarios datosSanitarios) {
+        this.datosSanitarios = datosSanitarios;
     }
 
     public String getSexo() {
@@ -67,51 +67,5 @@ class Requisitos {
     public void setEdadMin(int edadMin) {
         this.edadMin = edadMin;
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.dAcademico);
-        hash = 59 * hash + Objects.hashCode(this.expLaboral);
-        hash = 59 * hash + Objects.hashCode(this.dLegal);
-        hash = 59 * hash + Objects.hashCode(this.dSanitario);
-        hash = 59 * hash + Objects.hashCode(this.sexo);
-        hash = 59 * hash + this.edadMin;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Requisitos other = (Requisitos) obj;
-        if (this.edadMin != other.edadMin) {
-            return false;
-        }
-        if (!Objects.equals(this.sexo, other.sexo)) {
-            return false;
-        }
-        if (!Objects.equals(this.dAcademico, other.dAcademico)) {
-            return false;
-        }
-        if (!Objects.equals(this.expLaboral, other.expLaboral)) {
-            return false;
-        }
-        if (!Objects.equals(this.dLegal, other.dLegal)) {
-            return false;
-        }
-        if (!Objects.equals(this.dSanitario, other.dSanitario)) {
-            return false;
-        }
-        return true;
-    }
-    
     
 }

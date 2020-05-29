@@ -14,10 +14,10 @@ public class Persona {
    private Date fechaNacimiento;
    private Direccion direccion;
    private String identidad;
-   private DatoSanitario dSalud;
    private List<DatoFamiliar> refFamiliares;
    private DatoLegal legalesD;
    private Curriculum curriculum;
+   private DatosSanitarios datosSanitarios;
    
 
     public Persona(){
@@ -128,96 +128,14 @@ public class Persona {
         this.curriculum = curriculum;
     }
 
-    public DatoSanitario getdSalud() {
-        return dSalud;
+    public DatosSanitarios getDatosSanitarios() {
+        return datosSanitarios;
     }
 
-    public void setdSalud(DatoSanitario dSalud) {
-        this.dSalud = dSalud;
-    }
-    
-    
-
-    @Override
-    public String toString() {
-        return "Persona{" + "_id=" + _id + ", nombre=" + nombre + ", apellido=" + apellido + ", nacionalidad=" + nacionalidad + ", genero=" + genero + ", telefono=" + telefono + ", correo=" + correo + ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", identidad=" + identidad + ", refFamiliares=" + refFamiliares + ", legalesD=" + legalesD + ", curriculum=" + curriculum + ", dSalud=" + dSalud + '}';
+    public void setDatosSanitarios(DatosSanitarios datosSanitarios) {
+        this.datosSanitarios = datosSanitarios;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this._id);
-        hash = 97 * hash + Objects.hashCode(this.nombre);
-        hash = 97 * hash + Objects.hashCode(this.apellido);
-        hash = 97 * hash + Objects.hashCode(this.nacionalidad);
-        hash = 97 * hash + Objects.hashCode(this.genero);
-        hash = 97 * hash + Objects.hashCode(this.telefono);
-        hash = 97 * hash + Objects.hashCode(this.correo);
-        hash = 97 * hash + Objects.hashCode(this.fechaNacimiento);
-        hash = 97 * hash + Objects.hashCode(this.direccion);
-        hash = 97 * hash + Objects.hashCode(this.identidad);
-        hash = 97 * hash + Objects.hashCode(this.refFamiliares);
-        hash = 97 * hash + Objects.hashCode(this.legalesD);
-        hash = 97 * hash + Objects.hashCode(this.curriculum);
-        hash = 97 * hash + Objects.hashCode(this.dSalud);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Persona other = (Persona) obj;
-        if (!Objects.equals(this._id, other._id)) {
-            return false;
-        }
-        if (!Objects.equals(this.nombre, other.nombre)) {
-            return false;
-        }
-        if (!Objects.equals(this.apellido, other.apellido)) {
-            return false;
-        }
-        if (!Objects.equals(this.nacionalidad, other.nacionalidad)) {
-            return false;
-        }
-        if (!Objects.equals(this.genero, other.genero)) {
-            return false;
-        }
-        if (!Objects.equals(this.telefono, other.telefono)) {
-            return false;
-        }
-        if (!Objects.equals(this.correo, other.correo)) {
-            return false;
-        }
-        if (!Objects.equals(this.identidad, other.identidad)) {
-            return false;
-        }
-        if (!Objects.equals(this.fechaNacimiento, other.fechaNacimiento)) {
-            return false;
-        }
-        if (!Objects.equals(this.direccion, other.direccion)) {
-            return false;
-        }
-        if (!Objects.equals(this.refFamiliares, other.refFamiliares)) {
-            return false;
-        }
-        if (!Objects.equals(this.legalesD, other.legalesD)) {
-            return false;
-        }
-        if (!Objects.equals(this.curriculum, other.curriculum)) {
-            return false;
-        }
-        if (!Objects.equals(this.dSalud, other.dSalud)) {
-            return false;
-        }
-        return true;
-    }
+   
   
 }

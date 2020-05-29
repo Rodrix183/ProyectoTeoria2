@@ -12,6 +12,7 @@ import com.mongodb.WriteConcern;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -52,9 +53,17 @@ public class driverPrueba {
         MongoDatabase database;
 
         try {
+              
             String collectionS = "Candidato";
             mongoClient = MongoClients.create(clientSettings);
             database = mongoClient.getDatabase(databaseName);
+            //MongoCollection<Document> collection = database.getCollection(collectionS);
+            
+            //Traer El contenido de Arreglos
+//            MongoCursor<String> cursor = collection.distinct("curriculum.expectativaLaboral", new Document("_id", "C4"), String.class).iterator();
+//            while (cursor.hasNext()){
+//                System.out.println(cursor.next().toString());
+//            }
             MongoCollection<Persona> collection = database.getCollection(collectionS, Persona.class);
 
 
@@ -146,14 +155,7 @@ public class driverPrueba {
             c.setDatAcademicos(da);
             p.setCurriculum(c);
             
-            DatoSanitario ds = new DatoSanitario();
-            ds.setAlergia(false);
-            ds.setProblemaRespiratorio(true);
-            ds.setProblemaCardiaco(false); // Problema Cardiaco
-            ds.setProblemaMental(false);
-            p.setdSalud(ds);
-            
-            System.out.println(p.getdSalud().toString());
+            p.setDatosSanitarios(new DatosSanitarios(true, false, true, false));
             
             collection.withWriteConcern(WriteConcern.ACKNOWLEDGED);
             collection.insertOne(p);
