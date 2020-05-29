@@ -740,12 +740,10 @@ public class Main extends javax.swing.JFrame {
 
             SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
             String fechaCadena = sdf.format(new Date());
-            if (gen_selec == "" ||  reg_Nombre.getText() == "" || reg_Apellido.getText() == "" || reg_Nacionalidad.getText() == ""
-                || fechaCadena == "" || reg_PResidencia.getText() == "" || reg_Estado.getText() == "" || reg_Municipio.getText() == ""
-                || reg_Direccion.getText() == "" || reg_Fijo.getText() == "" || reg_Email.getText() == "") {
-                verify_reg = false;
-                JOptionPane.showMessageDialog(null, "Error al registrarse!");
-            } else {
+            if (gen_selec != "" &&  reg_Nombre.getText().length() > 0 && reg_Apellido.getText().length() > 0 && reg_Nacionalidad.getText().length() > 0 && 
+                fechaCadena != "" && reg_PResidencia.getText().length() > 0 && reg_Estado.getText().length() > 0 && reg_Municipio.getText().length() > 0 && 
+                reg_Direccion.getText().length() > 0 && reg_Fijo.getText().length() > 0 && reg_Email.getText().length() > 0) {
+                                                
                 verify_reg = true;
                 JOptionPane.showMessageDialog(null, "Registrado con Exito");
                 
@@ -779,8 +777,9 @@ public class Main extends javax.swing.JFrame {
                 
                 //Direccion
                 P.setDireccion(address);
-                
-                
+            } else {
+                verify_reg = false;
+                JOptionPane.showMessageDialog(null, "Error al registrarse!");                
             }
 
         } catch (Exception e) {
@@ -795,7 +794,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // BUSCAR EL ID PARA AGREGAR FAMILIAR
         
-        List verificarPers = dbd.getPersonas(gen_selec);
+        List <Persona> verificarPers = dbd.getPersonas(gen_selec);
         if (verificarPers.size()!= 0) {
             verify_exist = true;
         }else{
