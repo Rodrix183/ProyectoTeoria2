@@ -11,22 +11,13 @@ import java.util.Objects;
 
 public class DatoAcademico {
 
-    private List<String> estudiosSuperiores;
+    private String gradoAcademico;
     private List<String> otrosEstudios;
     private String espacializacion;
     private boolean estudianteActivo;
 
     public DatoAcademico() {
-        estudiosSuperiores = new ArrayList<>();
         otrosEstudios = new ArrayList<>();
-    }
-
-    public List<String> getEstudiosSuperiores() {
-        return estudiosSuperiores;
-    }
-
-    public void setEstudiosSuperiores(List<String> estudiosSuperiores) {
-        this.estudiosSuperiores = estudiosSuperiores;
     }
 
     public List<String> getOtrosEstudios() {
@@ -53,18 +44,26 @@ public class DatoAcademico {
         this.estudianteActivo = estudianteActivo;
     }
 
+    public String getGradoAcademico() {
+        return gradoAcademico;
+    }
+
+    public void setGradoAcademico(String gradoAcademico) {
+        this.gradoAcademico = gradoAcademico;
+    }
+
     @Override
     public String toString() {
-        return "DatoAcademico{" + "estudiosSuperiores=" + estudiosSuperiores + ", otrosEstudios=" + otrosEstudios + ", espacializacion=" + espacializacion + ", estudianteActivo=" + estudianteActivo + '}';
+        return "DatoAcademico{" + "gradoAcademico=" + gradoAcademico + ", otrosEstudios=" + otrosEstudios + ", espacializacion=" + espacializacion + ", estudianteActivo=" + estudianteActivo + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.estudiosSuperiores);
-        hash = 41 * hash + Objects.hashCode(this.otrosEstudios);
-        hash = 41 * hash + Objects.hashCode(this.espacializacion);
-        hash = 41 * hash + (this.estudianteActivo ? 1 : 0);
+        int hash = 5;
+        hash = 19 * hash + Objects.hashCode(this.gradoAcademico);
+        hash = 19 * hash + Objects.hashCode(this.otrosEstudios);
+        hash = 19 * hash + Objects.hashCode(this.espacializacion);
+        hash = 19 * hash + (this.estudianteActivo ? 1 : 0);
         return hash;
     }
 
@@ -83,10 +82,10 @@ public class DatoAcademico {
         if (this.estudianteActivo != other.estudianteActivo) {
             return false;
         }
-        if (!Objects.equals(this.espacializacion, other.espacializacion)) {
+        if (!Objects.equals(this.gradoAcademico, other.gradoAcademico)) {
             return false;
         }
-        if (!Objects.equals(this.estudiosSuperiores, other.estudiosSuperiores)) {
+        if (!Objects.equals(this.espacializacion, other.espacializacion)) {
             return false;
         }
         if (!Objects.equals(this.otrosEstudios, other.otrosEstudios)) {
@@ -94,6 +93,7 @@ public class DatoAcademico {
         }
         return true;
     }
+
     
-    
+
 }
