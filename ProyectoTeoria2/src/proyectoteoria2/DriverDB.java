@@ -3,6 +3,7 @@ Clase para la conexion de la Base de datos document DB
  */
 package proyectoteoria2;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoException;
 import com.mongodb.MongoClientSettings;
@@ -19,6 +20,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 
@@ -60,7 +62,11 @@ public class DriverDB {
         try {
             crearConexion();
             MongoCollection<Persona> collection = database.getCollection("Persona", Persona.class);
-            personas = collection.find().into(new ArrayList<>());
+            if(par != ""){
+                personas = collection.find(new Document("curriculum", new BasicDBObject("$exists", false))).into(new ArrayList<>());
+            }else{
+                personas = collection.find().into(new ArrayList<>());
+            }
         } catch (MongoException e) {
             e.printStackTrace();
         }finally{

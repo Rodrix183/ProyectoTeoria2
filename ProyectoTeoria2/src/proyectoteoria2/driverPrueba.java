@@ -55,50 +55,50 @@ public class driverPrueba {
             String collectionS = "Candidato";
             mongoClient = MongoClients.create(clientSettings);
             database = mongoClient.getDatabase(databaseName);
-            MongoCollection<Persona> collection = database.getCollection(collectionS, Persona.class);
+            MongoCollection<DatoLegal> collection = database.getCollection(collectionS, DatoLegal.class);
 
 
-            collection.deleteOne(new Document("_id", "C4"));
-            Persona p = new Persona();
-            p.setId("C4");
-            p.setNombre("Rafael Eduardo");
-            p.setApellido("Flores Caceres");
-            p.setNacionalidad("Honduras");
-            p.setGenero("M");
-            
-            //Convertir de String A date
-            DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            Date fechaN = null;
-            try {
-                fechaN = sdf.parse("22/08/1998");
-            } catch (ParseException ex) {
-                Logger.getLogger(DriverDB.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            
-            p.setFechaNacimiento(fechaN);
-            p.setTelefono("1122-6677");
-            p.setCorreo("rafael@correo.com");
-            
-            //Direccion
-            Direccion d = new Direccion();
-            d.setPais("Honduras");
-            d.setDepart("Fco.Morazan");
-            d.setMunicipio("Valle de Angeles");
-            d.setColonia("Col. Cerro Grande");
-            p.setDireccion(d);
-            
-            //Dato Familiar
-            List<DatoFamiliar> df = new ArrayList<>();
-            DatoFamiliar df1 = new DatoFamiliar();
-            df1.setId("C1");
-            df1.setParentesco("Madre");
-            df.add(df1);
-            DatoFamiliar df2 = new DatoFamiliar();
-            df2.setId("C2");
-            df2.setParentesco("Hermana");
-            df.add(df2);
-            p.setRefFamiliares(df);
+            //collection.deleteOne(new Document("_id", "C4"));
+//            Persona p = new Persona();
+//            p.setId("C4");
+//            p.setNombre("Rafael Eduardo");
+//            p.setApellido("Flores Caceres");
+//            p.setNacionalidad("Honduras");
+//            p.setGenero("M");
+//            
+//            //Convertir de String A date
+//            DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//            Date fechaN = null;
+//            try {
+//                fechaN = sdf.parse("22/08/1998");
+//            } catch (ParseException ex) {
+//                Logger.getLogger(DriverDB.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            
+//            
+//            p.setFechaNacimiento(fechaN);
+//            p.setTelefono("1122-6677");
+//            p.setCorreo("rafael@correo.com");
+//            
+//            //Direccion
+//            Direccion d = new Direccion();
+//            d.setPais("Honduras");
+//            d.setDepart("Fco.Morazan");
+//            d.setMunicipio("Valle de Angeles");
+//            d.setColonia("Col. Cerro Grande");
+//            p.setDireccion(d);
+//            
+//            //Dato Familiar
+//            List<DatoFamiliar> df = new ArrayList<>();
+//            DatoFamiliar df1 = new DatoFamiliar();
+//            df1.setId("C1");
+//            df1.setParentesco("Madre");
+//            df.add(df1);
+//            DatoFamiliar df2 = new DatoFamiliar();
+//            df2.setId("C2");
+//            df2.setParentesco("Hermana");
+//            df.add(df2);
+//            p.setRefFamiliares(df);
             
             //Dato Legal
             DatoLegal dl = new DatoLegal();
@@ -106,59 +106,59 @@ public class driverPrueba {
             dl.setEsMayor(true);
             dl.setEstuvoPreso(false);
             dl.setTieneLicencia(true);
-            p.setdLegales(dl);
+            //p.setdLegales(dl);
             
             
-            Curriculum c = new Curriculum();
-            List<String> expLaboral = new ArrayList<>();
-            expLaboral.add("Programador");
-            expLaboral.add("Tester");
-            c.setExpectativaLaboral(expLaboral);
-            c.setSalarioEsperado(20000);
-            c.setTipoContrato("Tiempo Completo");
-            
-            Habilidades h = new Habilidades();
-            List<String> idiomas = new ArrayList<>();
-            idiomas.add("Español");
-            idiomas.add("Ingles");
-            h.setIdiomas(idiomas);
-            List<String> tecnicas = new ArrayList<>();
-            tecnicas.add("Programacion C++");
-            tecnicas.add("Programacion Java");
-            h.setTecnicas(tecnicas);
-            c.setHabilidaes(h);
-            
-            
-            
-            ExpLaboral el = new ExpLaboral();
-            el.setAniosExp(1);
-            el.setTrabajoAnterior("Jestereo");
-            el.setPuestoAnterior("Agente de Soporte Tecnico");
-            c.setExpLaboral(el);
-            
-            DatoAcademico da = new DatoAcademico();
-            List<String> estudioSuperiores = new ArrayList<>();
-            estudioSuperiores.add("Unitec");
-            da.setEstudiosSuperiores(estudioSuperiores);
-            da.setEspacializacion("Programacion Web");
-            da.setEstudianteActivo(true);
-            List<String> estudioOtros = new ArrayList<>();
-            estudioOtros.add("Cursos de Ingles");
-            da.setOtrosEstudios(estudioOtros);
-            c.setDatAcademicos(da);
-            p.setCurriculum(c);
-            
-            DatoSanitario ds = new DatoSanitario();
-            ds.setAlergia(false);
-            ds.setProblemaRespiratorio(true);
-            ds.setProblemaCardiaco(false); // Problema Cardiaco
-            ds.setProblemaMental(false);
-            p.setdSalud(ds);
-            
-            System.out.println(p.getdSalud().toString() + "\n" + p.getdLegales().toString());
+//            Curriculum c = new Curriculum();
+//            List<String> expLaboral = new ArrayList<>();
+//            expLaboral.add("Programador");
+//            expLaboral.add("Tester");
+//            c.setExpectativaLaboral(expLaboral);
+//            c.setSalarioEsperado(20000);
+//            c.setTipoContrato("Tiempo Completo");
+//            
+//            Habilidades h = new Habilidades();
+//            List<String> idiomas = new ArrayList<>();
+//            idiomas.add("Español");
+//            idiomas.add("Ingles");
+//            h.setIdiomas(idiomas);
+//            List<String> tecnicas = new ArrayList<>();
+//            tecnicas.add("Programacion C++");
+//            tecnicas.add("Programacion Java");
+//            h.setTecnicas(tecnicas);
+//            c.setHabilidaes(h);
+//            
+//            
+//            
+//            ExpLaboral el = new ExpLaboral();
+//            el.setAniosExp(1);
+//            el.setTrabajoAnterior("Jestereo");
+//            el.setPuestoAnterior("Agente de Soporte Tecnico");
+//            c.setExpLaboral(el);
+//            
+//            DatoAcademico da = new DatoAcademico();
+//            List<String> estudioSuperiores = new ArrayList<>();
+//            estudioSuperiores.add("Unitec");
+//            da.setEstudiosSuperiores(estudioSuperiores);
+//            da.setEspacializacion("Programacion Web");
+//            da.setEstudianteActivo(true);
+//            List<String> estudioOtros = new ArrayList<>();
+//            estudioOtros.add("Cursos de Ingles");
+//            da.setOtrosEstudios(estudioOtros);
+//            c.setDatAcademicos(da);
+//            p.setCurriculum(c);
+//            
+//            DatoSanitario ds = new DatoSanitario();
+//            ds.setAlergia(false);
+//            ds.setProblemaRespiratorio(true);
+//            ds.setProblemaCardiaco(false); // Problema Cardiaco
+//            ds.setProblemaMental(false);
+//            p.setdSalud(ds);
+//            
+//            System.out.println(p.getdSalud().toString() + "\n" + p.getdLegales().toString());
             
             collection.withWriteConcern(WriteConcern.ACKNOWLEDGED);
-            collection.insertOne(p);
+            collection.insertOne(dl);
             
 
 //            Persona p1 = new Persona();
