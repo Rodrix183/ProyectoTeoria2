@@ -2,11 +2,13 @@ package proyectoteoria2;
 
 import com.mongodb.BasicDBObject;
 import java.awt.Color;
+import java.awt.HeadlessException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import org.bson.Document;
 
@@ -25,8 +27,12 @@ public class Main extends javax.swing.JFrame {
         Ventana_Empleados = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Tabla_Emp = new javax.swing.JTable();
+        Tabla_Cand = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Tabla_AplCandidato = new javax.swing.JTable();
+        jLabel36 = new javax.swing.JLabel();
         Ventana_Curriculum = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -120,11 +126,12 @@ public class Main extends javax.swing.JFrame {
         seleccionPreso = new javax.swing.ButtonGroup();
         seleccionLicencia = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        btnOfertasEmpleo = new javax.swing.JButton();
+        btnRCandidato = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton2 = new javax.swing.JButton();
+        btnCandidatos = new javax.swing.JButton();
+        btnREmpresa = new javax.swing.JLabel();
 
         javax.swing.GroupLayout Ventana_EmpresasLayout = new javax.swing.GroupLayout(Ventana_Empresas.getContentPane());
         Ventana_Empresas.getContentPane().setLayout(Ventana_EmpresasLayout);
@@ -140,38 +147,14 @@ public class Main extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 51, 255));
         jPanel2.setForeground(new java.awt.Color(0, 51, 255));
 
-        Tabla_Emp.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Apellido", "Nombre", "Correo", "Empresa"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Tabla_Emp.setComponentPopupMenu(Opciones_Emp);
-        Tabla_Emp.addMouseListener(new java.awt.event.MouseAdapter() {
+        Tabla_Cand.setModel(new DefaultTableModel());
+        Tabla_Cand.setComponentPopupMenu(Opciones_Emp);
+        Tabla_Cand.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Tabla_EmpMouseClicked(evt);
+                Tabla_CandMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(Tabla_Emp);
+        jScrollPane1.setViewportView(Tabla_Cand);
 
         jButton3.setText("Volver");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -180,42 +163,56 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jLabel35.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        jLabel35.setText("Candidatos");
+
+        Tabla_AplCandidato.setModel(new DefaultTableModel());
+        jScrollPane3.setViewportView(Tabla_AplCandidato);
+
+        jLabel36.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel36.setText("Aplicaciones");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(52, 52, 52)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(21, 21, 21))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel36)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton3)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel35)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(158, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
+                .addGap(21, 21, 21)
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
-                .addGap(19, 19, 19))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout Ventana_EmpleadosLayout = new javax.swing.GroupLayout(Ventana_Empleados.getContentPane());
         Ventana_Empleados.getContentPane().setLayout(Ventana_EmpleadosLayout);
         Ventana_EmpleadosLayout.setHorizontalGroup(
             Ventana_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Ventana_EmpleadosLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Ventana_EmpleadosLayout.setVerticalGroup(
             Ventana_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Ventana_EmpleadosLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Ventana_Curriculum.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -829,100 +826,105 @@ public class Main extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 51, 255));
         jPanel1.setForeground(new java.awt.Color(0, 51, 255));
 
-        jButton1.setText("Empresas");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnOfertasEmpleo.setText("Ver Ofertas de Empleo");
+        btnOfertasEmpleo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnOfertasEmpleoActionPerformed(evt);
             }
         });
 
-        jLabel2.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel2.setForeground(new java.awt.Color(153, 153, 255));
-        jLabel2.setText("Registrar Empleado");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnRCandidato.setBackground(new java.awt.Color(153, 153, 255));
+        btnRCandidato.setForeground(new java.awt.Color(153, 153, 255));
+        btnRCandidato.setText("Registrar Candidato");
+        btnRCandidato.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                btnRCandidatoMouseClicked(evt);
             }
         });
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 255));
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 153, 255));
-        jLabel1.setText("Empresa");
+        jLabel1.setText("Agencia de Empleos");
 
-        jButton2.setText("Ver Empleados");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnCandidatos.setText("Ver Candidatos");
+        btnCandidatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCandidatosActionPerformed(evt);
             }
         });
+
+        btnREmpresa.setForeground(new java.awt.Color(153, 153, 255));
+        btnREmpresa.setText("Resgistrar Empresas");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(jLabel1)
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))))
-                .addContainerGap(65, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnCandidatos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnOfertasEmpleo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnRCandidato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnREmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(75, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(131, 131, 131))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addGap(24, 24, 24))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnOfertasEmpleo))
+                    .addComponent(btnREmpresa))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCandidatos)
+                    .addComponent(btnRCandidato))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 330));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 190));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void btnRCandidatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRCandidatoMouseClicked
         //Registrar empleado
         this.dispose();
         Ventana_Curriculum.pack();
         Ventana_Curriculum.setLocationRelativeTo(this);
         Ventana_Curriculum.setVisible(true);
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_btnRCandidatoMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnOfertasEmpleoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfertasEmpleoActionPerformed
         //boton ver empresas
         Ventana_Empresas.pack();
         Ventana_Empresas.setLocationRelativeTo(this);
         Ventana_Empresas.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnOfertasEmpleoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnCandidatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCandidatosActionPerformed
         // boton ver empleados buscando empleo
         this.dispose();
         Ventana_Empleados.pack();
         Ventana_Empleados.setLocationRelativeTo(this);
         Ventana_Empleados.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnCandidatosActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // Retornar a menu
@@ -930,17 +932,17 @@ public class Main extends javax.swing.JFrame {
         this.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void Tabla_EmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tabla_EmpMouseClicked
+    private void Tabla_CandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tabla_CandMouseClicked
         //seleccionar fila
         try {
             //TableModel modelo = Tabla_Emp.getModel();
-            fila_select = Tabla_Emp.getSelectedRow();
+            fila_select = Tabla_Cand.getSelectedRow();
             System.out.println("Fila Seleccionada: " + fila_select);
 
             //abrir click derecho para ver curriculum
         } catch (Exception e) {
         }
-    }//GEN-LAST:event_Tabla_EmpMouseClicked
+    }//GEN-LAST:event_Tabla_CandMouseClicked
 
     private void Modif_EmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Modif_EmpActionPerformed
         // Boton Modificar
@@ -952,6 +954,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // Registrar
+        Persona P = new Persona();
         try {
             if (genMasc.isSelected()) {
                 gen_selec = genMasc.getText();
@@ -1000,10 +1003,10 @@ public class Main extends javax.swing.JFrame {
 
             SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
             String fechaCadena = sdf.format(new Date());
-            if (gen_selec != "" && reg_Nombre.getText().length() > 0 && reg_Apellido.getText().length() > 0 && reg_Nacionalidad.getText().length() > 0
-                    && fechaCadena != "" && reg_PResidencia.getText().length() > 0 && reg_Estado.getText().length() > 0 && reg_Municipio.getText().length() > 0
-                    && reg_Direccion.getText().length() > 0 && reg_Fijo.getText().length() > 0 && reg_Email.getText().length() > 0 && PresoCadena != ""
-                    && MayorCadena != "" && LicenciaCadena != "") {
+            if (!"".equals(gen_selec) && reg_Nombre.getText().length() > 0 && reg_Apellido.getText().length() > 0 && reg_Nacionalidad.getText().length() > 0
+                    && !"".equals(fechaCadena) && reg_PResidencia.getText().length() > 0 && reg_Estado.getText().length() > 0 && reg_Municipio.getText().length() > 0
+                    && reg_Direccion.getText().length() > 0 && reg_Fijo.getText().length() > 0 && reg_Email.getText().length() > 0 && !"".equals(PresoCadena)
+                    && !"".equals(MayorCadena) && !"".equals(LicenciaCadena)) {
 
                 verify_reg = true;
                 JOptionPane.showMessageDialog(null, "Registrado con Exito");
@@ -1058,8 +1061,7 @@ public class Main extends javax.swing.JFrame {
                 verify_reg = false;
                 JOptionPane.showMessageDialog(null, "Error al registrarse!");
             }
-
-        } catch (Exception e) {
+        } catch (HeadlessException e) {
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -1168,7 +1170,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton Si_Licencia;
     private javax.swing.JRadioButton Si_Mayor;
     private javax.swing.JRadioButton Si_Preso;
-    private javax.swing.JTable Tabla_Emp;
+    private javax.swing.JTable Tabla_AplCandidato;
+    private javax.swing.JTable Tabla_Cand;
     private javax.swing.JDialog Ventana_Curriculum;
     private javax.swing.JDialog Ventana_Empleados;
     private javax.swing.JDialog Ventana_Empresas;
@@ -1176,6 +1179,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> box_GradoAcademy;
     private javax.swing.JComboBox<String> box_Parentesco;
     private javax.swing.JComboBox<String> box_TipoContrato;
+    private javax.swing.JButton btnCandidatos;
+    private javax.swing.JButton btnOfertasEmpleo;
+    private javax.swing.JLabel btnRCandidato;
+    private javax.swing.JLabel btnREmpresa;
     private javax.swing.JButton btn_AgregarFamiliar;
     private com.toedter.calendar.JDateChooser fechaNacReg;
     private com.toedter.calendar.JDateChooser fecha_Reg;
@@ -1186,8 +1193,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.ButtonGroup genre_Fam;
     private javax.swing.ButtonGroup genre_reg;
     private javax.swing.JTextField id_Mostrado;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1203,7 +1208,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1220,6 +1224,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1238,6 +1244,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private java.awt.Label lbl_Verify;
@@ -1265,7 +1272,7 @@ public class Main extends javax.swing.JFrame {
     int fila_select = 0;
     boolean verify_reg = false;
     String gen_selec = "";
-    Persona P = new Persona();
+    List<Persona> personas = new ArrayList<>();
     boolean verify_exist = false;
     DriverDB dbd = new DriverDB();
     String id_actual = "";
