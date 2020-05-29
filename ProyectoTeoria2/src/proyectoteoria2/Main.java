@@ -147,7 +147,29 @@ public class Main extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 51, 255));
         jPanel2.setForeground(new java.awt.Color(0, 51, 255));
 
-        Tabla_Cand.setModel(new DefaultTableModel());
+        Tabla_Cand.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Nombre", "Apellido", "Fecha", "Telefono", "Correo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         Tabla_Cand.setComponentPopupMenu(Opciones_Emp);
         Tabla_Cand.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -920,6 +942,23 @@ public class Main extends javax.swing.JFrame {
 
     private void btnCandidatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCandidatosActionPerformed
         // boton ver empleados buscando empleo
+        personas = dbd.getPersonas(new Document("curriculum", new BasicDBObject("$exists", true)));
+        DefaultTableModel  modelo = (DefaultTableModel) this.Tabla_Cand.getModel();
+        System.out.println(personas.size());
+        for (int i = 0; i < personas.size(); i++) {
+            Persona p = personas.get(i);
+            Object row[] ={
+                p.getId(),
+                    p.getNombre(),
+                    p.getApellido(),
+                    p.getFechaNacimiento(),
+                    p.getTelefono(),
+                    p.getCorreo(),
+            };
+            modelo.addRow(row);
+        }
+        modelo.fireTableDataChanged();
+        this.Tabla_Cand.setModel(modelo);
         this.dispose();
         Ventana_Empleados.pack();
         Ventana_Empleados.setLocationRelativeTo(this);

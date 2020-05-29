@@ -3,23 +3,15 @@ Clase para la conexion de la Base de datos document DB
  */
 package proyectoteoria2;
 
-import com.mongodb.BasicDBObject;
 import com.mongodb.ConnectionString;
-import com.mongodb.MongoException;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
