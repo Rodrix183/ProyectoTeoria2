@@ -119,6 +119,27 @@ public class Main extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         box_GradoAcademy = new javax.swing.JComboBox<>();
         jLabel34 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        espEmpleadoReg = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        ActivoSi = new javax.swing.JRadioButton();
+        ActivoNo = new javax.swing.JRadioButton();
+        jLabel39 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        OtrosEstudios = new javax.swing.JTextArea();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel40 = new javax.swing.JLabel();
+        SiAlergias = new javax.swing.JRadioButton();
+        NoAlergias = new javax.swing.JRadioButton();
+        jLabel41 = new javax.swing.JLabel();
+        SiCardiaco = new javax.swing.JRadioButton();
+        NoCardiaco = new javax.swing.JRadioButton();
+        jLabel42 = new javax.swing.JLabel();
+        SiRespira = new javax.swing.JRadioButton();
+        NoRespira = new javax.swing.JRadioButton();
+        jLabel43 = new javax.swing.JLabel();
+        SiMental = new javax.swing.JRadioButton();
+        NoMental = new javax.swing.JRadioButton();
         jButton5 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         Opciones_Emp = new javax.swing.JPopupMenu();
@@ -128,6 +149,11 @@ public class Main extends javax.swing.JFrame {
         seleccionMayor = new javax.swing.ButtonGroup();
         seleccionPreso = new javax.swing.ButtonGroup();
         seleccionLicencia = new javax.swing.ButtonGroup();
+        seleccionActivo = new javax.swing.ButtonGroup();
+        seleccionAlergias = new javax.swing.ButtonGroup();
+        SeleccionRespira = new javax.swing.ButtonGroup();
+        SeleccionCardiaco = new javax.swing.ButtonGroup();
+        SeleccionMental = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         btnOfertasEmpleo = new javax.swing.JButton();
         btnRCandidato = new javax.swing.JLabel();
@@ -791,6 +817,25 @@ public class Main extends javax.swing.JFrame {
         jLabel34.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel34.setText("Grado Académico");
 
+        jLabel37.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel37.setText("Especialización");
+
+        jLabel38.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel38.setText("Estudiante Activo");
+
+        seleccionActivo.add(ActivoSi);
+        ActivoSi.setText("Si");
+
+        seleccionActivo.add(ActivoNo);
+        ActivoNo.setText("No");
+
+        jLabel39.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel39.setText("Otros Estudios");
+
+        OtrosEstudios.setColumns(20);
+        OtrosEstudios.setRows(5);
+        jScrollPane4.setViewportView(OtrosEstudios);
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -799,20 +844,155 @@ public class Main extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel34)
-                    .addComponent(box_GradoAcademy, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(510, Short.MAX_VALUE))
+                    .addComponent(box_GradoAcademy, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel38)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(ActivoSi)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ActivoNo)))
+                .addGap(99, 99, 99)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel37)
+                    .addComponent(espEmpleadoReg, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(jLabel34)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel37))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(box_GradoAcademy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(433, Short.MAX_VALUE))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(box_GradoAcademy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(espEmpleadoReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel39))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ActivoSi)
+                        .addComponent(ActivoNo))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Datos Académicos", jPanel10);
+
+        jLabel40.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel40.setText("Alergias");
+
+        seleccionAlergias.add(SiAlergias);
+        SiAlergias.setText("Si");
+
+        seleccionAlergias.add(NoAlergias);
+        NoAlergias.setText("No");
+
+        jLabel41.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel41.setText("Problemas Cardíacos");
+
+        SeleccionCardiaco.add(SiCardiaco);
+        SiCardiaco.setText("Si");
+
+        SeleccionCardiaco.add(NoCardiaco);
+        NoCardiaco.setText("No");
+
+        jLabel42.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel42.setText("Problemas Respiratorios");
+
+        SeleccionRespira.add(SiRespira);
+        SiRespira.setText("Si");
+
+        SeleccionRespira.add(NoRespira);
+        NoRespira.setText("No");
+
+        jLabel43.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel43.setText("Problemas Mentales");
+
+        SeleccionMental.add(SiMental);
+        SiMental.setText("Si");
+
+        SeleccionMental.add(NoMental);
+        NoMental.setText("No");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel40))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(SiAlergias)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NoAlergias))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel41))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(SiCardiaco)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NoCardiaco)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(SiMental)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NoMental))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(SiRespira)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NoRespira))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel43)
+                            .addComponent(jLabel42))))
+                .addGap(172, 172, 172))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(jLabel40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SiAlergias)
+                            .addComponent(NoAlergias)))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(jLabel42)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SiRespira)
+                            .addComponent(NoRespira))))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(jLabel41)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SiCardiaco)
+                            .addComponent(NoCardiaco)))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(jLabel43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SiMental)
+                            .addComponent(NoMental))))
+                .addContainerGap(317, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Datos Sanitarios", jPanel12);
 
         jButton5.setText("Volver");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -1233,14 +1413,28 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton ActivoNo;
+    private javax.swing.JRadioButton ActivoSi;
     private javax.swing.JTextField IDDos;
     private javax.swing.JTextField IDTres;
     private javax.swing.JTextField IDUno;
     private javax.swing.JMenuItem Modif_Emp;
+    private javax.swing.JRadioButton NoAlergias;
+    private javax.swing.JRadioButton NoCardiaco;
+    private javax.swing.JRadioButton NoMental;
+    private javax.swing.JRadioButton NoRespira;
     private javax.swing.JRadioButton No_Licencia;
     private javax.swing.JRadioButton No_Mayor;
     private javax.swing.JRadioButton No_Preso;
     private javax.swing.JPopupMenu Opciones_Emp;
+    private javax.swing.JTextArea OtrosEstudios;
+    private javax.swing.ButtonGroup SeleccionCardiaco;
+    private javax.swing.ButtonGroup SeleccionMental;
+    private javax.swing.ButtonGroup SeleccionRespira;
+    private javax.swing.JRadioButton SiAlergias;
+    private javax.swing.JRadioButton SiCardiaco;
+    private javax.swing.JRadioButton SiMental;
+    private javax.swing.JRadioButton SiRespira;
     private javax.swing.JRadioButton Si_Licencia;
     private javax.swing.JRadioButton Si_Mayor;
     private javax.swing.JRadioButton Si_Preso;
@@ -1259,6 +1453,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel btnRCandidato;
     private javax.swing.JLabel btnREmpresa;
     private javax.swing.JButton btn_AgregarFamiliar;
+    private javax.swing.JTextField espEmpleadoReg;
     private com.toedter.calendar.JDateChooser fechaNacReg;
     private com.toedter.calendar.JDateChooser fecha_Reg;
     private javax.swing.JRadioButton genFem;
@@ -1302,7 +1497,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1311,6 +1513,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1322,6 +1525,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private java.awt.Label lbl_Verify;
@@ -1340,6 +1544,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField reg_PResidencia;
     private javax.swing.JTextField reg_SalaryEsp;
     private javax.swing.JTextField reg_nomFamily;
+    private javax.swing.ButtonGroup seleccionActivo;
+    private javax.swing.ButtonGroup seleccionAlergias;
     private javax.swing.ButtonGroup seleccionLicencia;
     private javax.swing.ButtonGroup seleccionMayor;
     private javax.swing.ButtonGroup seleccionPreso;
