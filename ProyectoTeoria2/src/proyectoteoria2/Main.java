@@ -20,6 +20,12 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(this);
         tipos = dbd.getTipoTrabajo(null);
+
+        btnOfertasEmpleo.setEnabled(false);
+        btnCandidatos.setEnabled(false);
+        btnREmpresa.setEnabled(false);
+        btnRCandidato.setEnabled(false);
+        jMenuItem2.setEnabled(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -243,6 +249,14 @@ public class Main extends javax.swing.JFrame {
         Respiratorio_Oferta = new javax.swing.ButtonGroup();
         Cardiaco_Oferta = new javax.swing.ButtonGroup();
         Mental_Oferta = new javax.swing.ButtonGroup();
+        VentanaLogin = new javax.swing.JDialog();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        tf_User = new javax.swing.JTextField();
+        pf_Contraseña = new javax.swing.JPasswordField();
+        jButton7 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         btnOfertasEmpleo = new javax.swing.JButton();
         btnRCandidato = new javax.swing.JLabel();
@@ -1797,6 +1811,89 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jPanel19.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel19.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel77.setBackground(new java.awt.Color(0, 0, 102));
+        jLabel77.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel77.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel77.setText("      Volver");
+        jLabel77.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 102)));
+        jLabel77.setOpaque(true);
+        jLabel77.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel77MouseClicked(evt);
+            }
+        });
+
+        jLabel78.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel78.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel78.setText("Usuario");
+
+        jLabel79.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel79.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel79.setText("Contraseña");
+
+        jButton7.setText("Iniciar Sesión");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(jLabel78))
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel79)))
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tf_User)
+                            .addComponent(pf_Contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addComponent(jButton7)))
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel78))
+                    .addComponent(tf_User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel79)
+                    .addComponent(pf_Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
+                .addComponent(jButton7)
+                .addGap(0, 78, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout VentanaLoginLayout = new javax.swing.GroupLayout(VentanaLogin.getContentPane());
+        VentanaLogin.getContentPane().setLayout(VentanaLoginLayout);
+        VentanaLoginLayout.setHorizontalGroup(
+            VentanaLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        VentanaLoginLayout.setVerticalGroup(
+            VentanaLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1899,6 +1996,11 @@ public class Main extends javax.swing.JFrame {
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem2.setText("Cerrar Sesión");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
@@ -2369,9 +2471,10 @@ public class Main extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         //LOGIN
-        //GLOBAL
-        String usuario = "Jsandoval";
-        String password = "j12345";
+        this.dispose();
+        VentanaLogin.pack();
+        VentanaLogin.setLocationRelativeTo(this);
+        VentanaLogin.setVisible(true);
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -2405,7 +2508,7 @@ public class Main extends javax.swing.JFrame {
         //Confirmar Oferta
         try {
             //radiobotones
-            
+
             //Alergias
             if (SiAlergias_Oferta.isSelected()) {
                 Alergia_Ofertas = true;
@@ -2453,23 +2556,60 @@ public class Main extends javax.swing.JFrame {
                 Mental_Ofertas = false;
                 MentalCadena_Oferta = "";
             }
-            
+
             //validacion de no vacios y no nulos
             if (tf_EdadOferta.getText().length() > 0 && tf_CodeOferta.getText().length() > 0 && tf_AreaEmpresa.getText().length() > 0
-                && tf_Cargo.getText().length() > 0 && tf_Vacantes.getText().length() > 0 && tf_Sueldo.getText().length() > 0 && !"".equals(AlergiaCadena_Oferta)
-                && !"".equals(CardiacoCadena_Oferta) && !"".equals(RespirarCadena_Oferta) && !"".equals(MentalCadena_Oferta)) {
-                
-                
-                
-                
+                    && tf_Cargo.getText().length() > 0 && tf_Vacantes.getText().length() > 0 && tf_Sueldo.getText().length() > 0 && !"".equals(AlergiaCadena_Oferta)
+                    && !"".equals(CardiacoCadena_Oferta) && !"".equals(RespirarCadena_Oferta) && !"".equals(MentalCadena_Oferta)) {
+
                 JOptionPane.showMessageDialog(this, "Oferta Creada!");
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(this, "Datos Invalidos! Revise Nuevamente");
             }
-            
+
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jLabel77MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel77MouseClicked
+        //login
+        VentanaLogin.dispose();
+        this.setVisible(true);
+    }//GEN-LAST:event_jLabel77MouseClicked
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        //Iniciar Sesion
+        if (tf_User.getText().equals(usuario) && pf_Contraseña.getText().equals(password)) {
+            JOptionPane.showMessageDialog(this, "Bienvenido!");
+            btnOfertasEmpleo.setEnabled(true);
+            btnCandidatos.setEnabled(true);
+            btnREmpresa.setEnabled(true);
+            btnRCandidato.setEnabled(true);
+            jMenuItem1.setEnabled(false);
+            jMenuItem2.setEnabled(true);
+
+            tf_User.setText("");
+            pf_Contraseña.setText("");
+            VentanaLogin.dispose();
+            this.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Datos Incorrectos!");
+            btnOfertasEmpleo.setEnabled(false);
+            btnCandidatos.setEnabled(false);
+            btnREmpresa.setEnabled(false);
+            btnRCandidato.setEnabled(false);
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // logout
+        jMenuItem1.setEnabled(true);
+        jMenuItem2.setEnabled(false);
+        btnOfertasEmpleo.setEnabled(false);
+        btnCandidatos.setEnabled(false);
+        btnREmpresa.setEnabled(false);
+        btnRCandidato.setEnabled(false);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     public void activarControles(boolean encendido) {
         if (encendido) {
@@ -2574,6 +2714,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton Si_Preso;
     private javax.swing.JTable Tabla_AplCandidato;
     private javax.swing.JTable Tabla_Cand;
+    private javax.swing.JDialog VentanaLogin;
     private javax.swing.JDialog Ventana_CrearOferta;
     private javax.swing.JDialog Ventana_Curriculum;
     private javax.swing.JDialog Ventana_Empleados;
@@ -2610,6 +2751,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2684,6 +2826,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
@@ -2701,6 +2846,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2722,6 +2868,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private java.awt.Label lbl_Verify;
     private javax.swing.JList<String> listaFamiliares;
+    private javax.swing.JPasswordField pf_Contraseña;
     private javax.swing.JTextField reg_Apellido;
     private javax.swing.JTextField reg_Direccion;
     private javax.swing.JTextField reg_Email;
@@ -2749,6 +2896,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_CodeOferta;
     private javax.swing.JTextField tf_EdadOferta;
     private javax.swing.JTextField tf_Sueldo;
+    private javax.swing.JTextField tf_User;
     private javax.swing.JTextField tf_Vacantes;
     private javax.swing.JTextField txtEmpresaAnterior;
     private javax.swing.JTextField txtEmpresaAnterior_Oferta;
@@ -2814,4 +2962,7 @@ public class Main extends javax.swing.JFrame {
     //Mentales
     boolean Mental_Ofertas = false;
     String MentalCadena_Oferta = "";
+
+    String usuario = "Jsandoval";
+    String password = "j12345";
 }
