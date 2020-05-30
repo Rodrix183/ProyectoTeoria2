@@ -812,7 +812,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Datos Legales", jPanel9);
 
-        box_GradoAcademy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bachiller", "Licenciado", "Magíster", "Doctorado" }));
+        box_GradoAcademy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Primaria", "Secundaria", "Superior", "PostGrado" }));
 
         jLabel34.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel34.setText("Grado Académico");

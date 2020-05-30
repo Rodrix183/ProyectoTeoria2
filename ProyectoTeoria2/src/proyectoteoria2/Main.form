@@ -1299,10 +1299,10 @@
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="4">
-                            <StringItem index="0" value="Bachiller"/>
-                            <StringItem index="1" value="Licenciado"/>
-                            <StringItem index="2" value="Mag&#xed;ster"/>
-                            <StringItem index="3" value="Doctorado"/>
+                            <StringItem index="0" value="Primaria"/>
+                            <StringItem index="1" value="Secundaria"/>
+                            <StringItem index="2" value="Superior"/>
+                            <StringItem index="3" value="PostGrado"/>
                           </StringArray>
                         </Property>
                       </Properties>
