@@ -85,11 +85,11 @@ public class DriverDB {
         return empresas;
     }
     
-    public List<TipoTrabajo> getTipoTrabajo(Document par){
-        List<TipoTrabajo> tipoTrabajos = null;
+    public List<CategoriaTrabajo> getTipoTrabajo(Document par){
+        List<CategoriaTrabajo> tipoTrabajos = null;
         try {
             crearConexion();
-            MongoCollection<TipoTrabajo> collection = database.getCollection("CategoriaTrabajo", TipoTrabajo.class);
+            MongoCollection<CategoriaTrabajo> collection = database.getCollection("CategoriaTrabajo", CategoriaTrabajo.class);
             if(par != null){
                 tipoTrabajos = collection.find(par).into(new ArrayList<>());
             }else{
@@ -100,13 +100,16 @@ public class DriverDB {
         }finally{
             cerrarConexion();
         }
+        for (CategoriaTrabajo tipoTrabajo : tipoTrabajos) {
+            System.out.println(tipoTrabajo.getNombreCategoria());
+        }
         return tipoTrabajos;
     }
     
     public void setPersonas(Persona P){
         try {
             crearConexion();
-            MongoCollection<Persona> collection = database.getCollection("Persona", Persona.class);
+            MongoCollection<Persona> collection = database.getCollection("Candidato", Persona.class);
             collection.insertOne(P);
         } catch (MongoException e) {
             e.printStackTrace();

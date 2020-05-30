@@ -15,7 +15,8 @@ public class Habilidades {
     private List<String> tecnicas;
 
     public Habilidades() {
-        
+        idiomas = new ArrayList<>();
+        tecnicas = new ArrayList<>();
     }
 
     public List<String> getIdiomas() {

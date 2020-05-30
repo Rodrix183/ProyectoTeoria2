@@ -21,7 +21,7 @@ public class Persona {
    
 
     public Persona(){
-        
+        refFamiliares = new ArrayList<>();
     }
 
     public String getId() {

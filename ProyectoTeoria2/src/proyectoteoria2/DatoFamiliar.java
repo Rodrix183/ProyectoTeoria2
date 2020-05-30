@@ -12,6 +12,11 @@ public class DatoFamiliar {
     public DatoFamiliar() {
     }
 
+    public DatoFamiliar(String idPersona, String parentesco) {
+        this.idPersona = idPersona;
+        this.parentesco = parentesco;
+    }
+
     public String getId() {
         return idPersona;
     }

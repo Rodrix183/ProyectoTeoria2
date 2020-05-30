@@ -7,6 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -17,7 +19,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(this);
-        
+        tipos = dbd.getTipoTrabajo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -51,7 +53,6 @@ public class Main extends javax.swing.JFrame {
         reg_Nacionalidad = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         fecha_Reg = new com.toedter.calendar.JDateChooser();
-        jButton4 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         id_Mostrado = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
@@ -85,7 +86,7 @@ public class Main extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         reg_LNameFam = new javax.swing.JTextField();
         verif_ID = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
+        btnVerificar = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         reg_NacFam = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
@@ -141,7 +142,15 @@ public class Main extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         SiMental = new javax.swing.JRadioButton();
         NoMental = new javax.swing.JRadioButton();
+        jPanel13 = new javax.swing.JPanel();
+        txtEmpresaAnterior = new javax.swing.JTextField();
+        txtPuestoAnterior = new javax.swing.JTextField();
+        spnAniosExperiemcia = new javax.swing.JSpinner();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         Opciones_Emp = new javax.swing.JPopupMenu();
         Modif_Emp = new javax.swing.JMenuItem();
@@ -288,6 +297,12 @@ public class Main extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel4.setText("Registro");
 
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
+
         jLabel3.setText("Nombre");
 
         jLabel5.setText("Apellido");
@@ -303,13 +318,6 @@ public class Main extends javax.swing.JFrame {
         genFem.setText("Femenino");
 
         jLabel9.setText("Fecha Nacimiento");
-
-        jButton4.setText("Registrar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
 
         jLabel14.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel14.setText("Su ID es:");
@@ -390,10 +398,6 @@ public class Main extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(IDTres, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(313, 313, 313))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,9 +436,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(genMasc)
                     .addComponent(genFem))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(31, 31, 31))
+                .addContainerGap(276, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Personales", jPanel4);
@@ -512,6 +514,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Contacto", jPanel5);
 
+        listaFamiliares.setModel(new DefaultListModel());
         jScrollPane2.setViewportView(listaFamiliares);
 
         jLabel17.setText("ID");
@@ -521,7 +524,6 @@ public class Main extends javax.swing.JFrame {
         box_Parentesco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Padre", "Madre", "Hermano", "Hermana", "Hijo", "Hija", "Primo", "Prima", "Tio", "Tia", "Abuelo", "Abuela", "Nieto", "Nieta" }));
 
         btn_AgregarFamiliar.setText("Agregar Familiar");
-        btn_AgregarFamiliar.setEnabled(false);
         btn_AgregarFamiliar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_AgregarFamiliarActionPerformed(evt);
@@ -532,10 +534,10 @@ public class Main extends javax.swing.JFrame {
 
         jLabel20.setText("Apellido");
 
-        jButton7.setText("Verificar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnVerificar.setText("Verificar");
+        btnVerificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnVerificarActionPerformed(evt);
             }
         });
 
@@ -604,7 +606,7 @@ public class Main extends javax.swing.JFrame {
                                                     .addGroup(jPanel7Layout.createSequentialGroup()
                                                         .addComponent(verif_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addGap(18, 18, 18)
-                                                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                        .addComponent(btnVerificar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                             .addGroup(jPanel7Layout.createSequentialGroup()
                                                 .addComponent(jLabel21)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -638,7 +640,7 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel17)
                                 .addComponent(verif_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnVerificar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lbl_Verify, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -690,6 +692,12 @@ public class Main extends javax.swing.JFrame {
         box_TipoContrato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Indefinido", "Temporal", "Por Obra o Servicio", "Eventual", "De Internidad", "De Relevo", "De Formación y Aprendizaje", "De Prácticas" }));
 
         jLabel2.setText("Categoría Empleado");
+
+        box_CategoriaEmp.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                box_CategoriaEmpItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -927,19 +935,18 @@ public class Main extends javax.swing.JFrame {
                 .addGap(91, 91, 91)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel40))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
                         .addComponent(SiAlergias)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(NoAlergias))
                     .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel41))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
                         .addComponent(SiCardiaco)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(NoCardiaco)))
+                        .addComponent(NoCardiaco))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel41))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
@@ -993,10 +1000,76 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Datos Sanitarios", jPanel12);
 
+        spnAniosExperiemcia.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
+
+        jLabel44.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel44.setText("Puesto Anterior");
+
+        jLabel45.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel45.setText("Años de Experiencia");
+
+        jLabel46.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel46.setText("Empresa Anterior");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(jLabel44)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtPuestoAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmpresaAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel45)
+                            .addComponent(spnAniosExperiemcia, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(59, 59, 59))))
+            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel13Layout.createSequentialGroup()
+                    .addGap(41, 41, 41)
+                    .addComponent(jLabel46)
+                    .addContainerGap(524, Short.MAX_VALUE)))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(jLabel45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEmpresaAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnAniosExperiemcia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(123, 123, 123)
+                .addComponent(jLabel44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPuestoAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(226, Short.MAX_VALUE))
+            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel13Layout.createSequentialGroup()
+                    .addGap(78, 78, 78)
+                    .addComponent(jLabel46)
+                    .addContainerGap(425, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Exp Laboral", jPanel13);
+
         jButton5.setText("Volver");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Registrar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
             }
         });
 
@@ -1005,13 +1078,18 @@ public class Main extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addGap(204, 204, 204)
-                        .addComponent(jLabel4))
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jButton5)
+                                .addGap(204, 204, 204)
+                                .addComponent(jLabel4))
+                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(354, 354, 354)
+                        .addComponent(jButton4)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -1023,7 +1101,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jButton5))
                 .addGap(18, 18, 18)
                 .addComponent(jTabbedPane1)
-                .addGap(94, 94, 94))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4)
+                .addGap(56, 56, 56))
         );
 
         Ventana_Curriculum.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 730));
@@ -1317,7 +1397,7 @@ public class Main extends javax.swing.JFrame {
             if (!"".equals(gen_selec) && reg_Nombre.getText().length() > 0 && reg_Apellido.getText().length() > 0 && reg_Nacionalidad.getText().length() > 0
                 && !"".equals(fechaCadena) && reg_PResidencia.getText().length() > 0 && reg_Estado.getText().length() > 0 && reg_Municipio.getText().length() > 0
                 && reg_Direccion.getText().length() > 0 && reg_Fijo.getText().length() > 0 && reg_Email.getText().length() > 0 && !"".equals(PresoCadena)
-                && !"".equals(MayorCadena) && !"".equals(LicenciaCadena) && reg_SalaryEsp.getText().length() > 0 && !"".equals(ActivoCadena) &&
+                && !"".equals(MayorCadena) && !"".equals(LicenciaCadena) && reg_SalaryEsp.getText().length() > 0  && !"".equals(ActivoCadena) &&
                 !"".equals(AlergiaCadena) && !"".equals(RespirarCadena) && !"".equals(MentalCadena) && !"".equals(CardiacoCadena)) {
 
                 verify_reg = true;
@@ -1336,21 +1416,25 @@ public class Main extends javax.swing.JFrame {
                     int random = (int) (Math.random() * 9999);
                     idPersona = "C" + random;
                     Document d = new Document("_id", idPersona);
-                    // dbd.getPersonas(d);
-
-                } while (bandera == false);
+                    List<Persona> verifica = dbd.getPersonas(d);
+                    if (verifica.size() == 0){
+                        bandera = true;
+                    }else{
+                        bandera = false;
+                    }
+                } while (!bandera);
 
                 Direccion address = new Direccion();
                 address.setPais(reg_PResidencia.getText());
-                address.setDepart(idPersona);
-                address.setMunicipio(gen_selec);
-                address.setColonia(idPersona);
+                address.setDepart(reg_Estado.getText());
+                address.setMunicipio(reg_Municipio.getText());
+                address.setColonia(reg_Direccion.getText());
                 
                 //Strings
                 P.setId(idPersona);
                 P.setNombre(reg_Nombre.getText());
                 P.setApellido(reg_Apellido.getText());
-                P.setGenero(genMasc.getText());
+                P.setGenero(gen_selec);
                 P.setTelefono(reg_Fijo.getText());
                 P.setNacionalidad(reg_Nacionalidad.getText());
                 P.setCorreo(reg_Email.getText());
@@ -1360,12 +1444,46 @@ public class Main extends javax.swing.JFrame {
 
                 //Direccion
                 P.setDireccion(address);
+                
+                //Dato Legal
+                DatoLegal dl = new DatoLegal();
+                dl.setEsMayor(Mayor);
+                dl.setEstuvoPreso(Preso);
+                dl.setTieneLicencia(Licencia);
+                P.setLegalesD(dl);
+                
+                //Curriculum
+                Curriculum c = new Curriculum();
+                List<String> expLaboral = new ArrayList<>();
+                expLaboral.add(box_ExpectativaLab.getSelectedItem().toString());
+                c.setExpectativaLaboral(expLaboral);
+                c.setSalarioEsperado(Integer.parseInt(reg_SalaryEsp.getText()));
+                c.setTipoContrato(box_TipoContrato.getSelectedItem().toString());
+
+                ExpLaboral el = new ExpLaboral();
+                el.setAniosExp(Integer.parseInt(this.spnAniosExperiemcia.getValue().toString()));
+                el.setTrabajoAnterior(this.txtEmpresaAnterior.getText());
+                el.setPuestoAnterior(this.txtPuestoAnterior.getText());
+                c.setExpLaboral(el);
+
+                DatoAcademico da = new DatoAcademico();
+                da.setGradoAcademico(box_GradoAcademy.getSelectedItem().toString());
+                da.setEspacializacion(espEmpleadoReg.getText());
+                da.setEstudianteActivo(Activo);
+                List<String> estudioOtros = new ArrayList<>();
+                estudioOtros.add(OtrosEstudios.getText());
+                da.setOtrosEstudios(estudioOtros);
+                c.setDatAcademicos(da);
+                P.setCurriculum(c);
+                
+                P.setDatosSanitarios(new DatosSanitarios(Alergia, Respirar, Cardiaco, Mental));
 
                 //Aqui validar lo de la identidad
                 id_actual = idPersona;
                 id_Mostrado.setText(idPersona);
-
                 
+                
+                dbd.setPersonas(P);
             } else {
                 verify_reg = false;
                 JOptionPane.showMessageDialog(null, "Error al registrarse!");
@@ -1379,11 +1497,11 @@ public class Main extends javax.swing.JFrame {
         this.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
         // BUSCAR EL ID PARA AGREGAR FAMILIAR
 
-        List<Persona> verificarPers = dbd.getPersonas(new Document("_id", verif_ID.getText()));
-        if (!verificarPers.isEmpty()) {
+        refFamiliares = dbd.getPersonas(new Document("_id", verif_ID.getText()));
+        if (!refFamiliares.isEmpty()) {
 
             verify_exist = true;
         } else {
@@ -1394,18 +1512,60 @@ public class Main extends javax.swing.JFrame {
         if (verify_exist) {
             lbl_Verify.setText("✓");
             lbl_Verify.setBackground(Color.green);
-            btn_AgregarFamiliar.setEnabled(true);
+            this.verif_ID.setEnabled(false);
+            activarControles(true);
         } else {
             //No lo agrega porque ningun ID coincide
             lbl_Verify.setText("x");
             lbl_Verify.setBackground(Color.red);
-            btn_AgregarFamiliar.setEnabled(false);
+            //btn_AgregarFamiliar.setEnabled(false);
+            this.verif_ID.setEnabled(true);
+            activarControles(false);
         }
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnVerificarActionPerformed
 
     private void btn_AgregarFamiliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarFamiliarActionPerformed
-        // Agregar un familiar
-
+        if (verify_exist) {
+            if (this.verif_ID.getText() != "" && this.box_Parentesco.getSelectedItem().toString() != "") {
+                List<DatoFamiliar> temp = new ArrayList<>();
+                temp.add(new DatoFamiliar(this.verif_ID.getText(), this.box_Parentesco.getSelectedItem().toString()));
+                System.out.println(temp.get(0));
+                P.setRefFamiliares(temp);
+            }
+        }else{
+            if (this.verif_ID.getText() != "" && this.box_Parentesco.getSelectedItem().toString() != "" && this.reg_nomFamily.getText() != "") {
+                
+                String gen_selec_F = new String();
+                if (genMascFam.isSelected()) {
+                    gen_selec_F = genMascFam.getText();
+                } else if (genFemFam.isSelected()) {
+                    gen_selec_F = genFemFam.getText();
+                } else {
+                    gen_selec_F = "";
+                }
+                Persona PT = new Persona();
+                PT.setId(this.verif_ID.getText());
+                PT.setNombre(this.reg_nomFamily.getText());
+                PT.setApellido(this.reg_LNameFam.getText());
+                PT.setGenero(gen_selec_F);
+                PT.setTelefono(this.tel_Fam.getText());
+                PT.setNacionalidad(this.reg_NacFam.getText());
+                PT.setCorreo(this.reg_EmailFam.getText());
+                
+                dbd.setPersonas(PT);
+                
+                P.getRefFamiliares().add(new DatoFamiliar(this.verif_ID.getText(), this.box_Parentesco.getSelectedItem().toString()));
+            }
+        }
+        DefaultListModel modelo = (DefaultListModel) this.listaFamiliares.getModel();
+        modelo.addElement(this.verif_ID.getText());
+        this.listaFamiliares.setModel(modelo);
+        this.verif_ID.setEnabled(false);
+        this.box_Parentesco.setEnabled(false);
+        this.btnVerificar.setEnabled(false);
+        this.verif_ID.setText("");
+        this.btn_AgregarFamiliar.setEnabled(false);
+        this.activarControles(true);
     }//GEN-LAST:event_btn_AgregarFamiliarActionPerformed
 
     private void IDUnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IDUnoKeyTyped
@@ -1439,6 +1599,56 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnREmpresaMouseClicked
 
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        activarControles(false);
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) this.box_CategoriaEmp.getModel();
+        for (CategoriaTrabajo tipo : tipos) {
+            modelo.addElement(tipo.getNombreCategoria());
+        }
+        this.box_CategoriaEmp.setModel(modelo);
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void box_CategoriaEmpItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_box_CategoriaEmpItemStateChanged
+        Object item = evt.getItem();
+        if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
+            for (CategoriaTrabajo tipo : tipos) {
+                if (tipo.getNombreCategoria() == item.toString()) {
+                    DefaultComboBoxModel modelo = (DefaultComboBoxModel) this.box_ExpectativaLab.getModel();
+                    modelo.removeAllElements();
+                    for (int i = 0; i < tipo.getPuestosTrabajo().size(); i++) {
+                        modelo.addElement(tipo.getPuestosTrabajo().get(i));
+                    }
+                    this.box_ExpectativaLab.getModel();
+                    break;
+                }
+            }
+        }
+    }//GEN-LAST:event_box_CategoriaEmpItemStateChanged
+
+    public void activarControles(boolean encendido){
+        if (encendido) {
+            this.reg_nomFamily.setEnabled(false);
+            this.reg_LNameFam.setEnabled(false);
+            this.reg_NacFam.setEnabled(false);
+            this.genMascFam.setEnabled(false);
+            this.genFemFam.setEnabled(false);
+            this.tel_Fam.setEnabled(false);
+            this.reg_EmailFam.setEnabled(false);
+            this.fechaNacReg.setEnabled(false);
+        }else{
+            this.reg_nomFamily.setEnabled(true);
+            this.reg_LNameFam.setEnabled(true);
+            this.reg_NacFam.setEnabled(true);
+            this.genMascFam.setEnabled(true);
+            this.genFemFam.setEnabled(true);
+            this.tel_Fam.setEnabled(true);
+            this.reg_EmailFam.setEnabled(true);
+            this.fechaNacReg.setEnabled(true);
+        }
+    }
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1511,6 +1721,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btnOfertasEmpleo;
     private javax.swing.JLabel btnRCandidato;
     private javax.swing.JLabel btnREmpresa;
+    private javax.swing.JButton btnVerificar;
     private javax.swing.JButton btn_AgregarFamiliar;
     private javax.swing.JTextField espEmpleadoReg;
     private com.toedter.calendar.JDateChooser fechaNacReg;
@@ -1525,7 +1736,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1564,6 +1774,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1573,6 +1786,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1608,13 +1822,18 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.ButtonGroup seleccionLicencia;
     private javax.swing.ButtonGroup seleccionMayor;
     private javax.swing.ButtonGroup seleccionPreso;
+    private javax.swing.JSpinner spnAniosExperiemcia;
     private javax.swing.JTextField tel_Fam;
+    private javax.swing.JTextField txtEmpresaAnterior;
+    private javax.swing.JTextField txtPuestoAnterior;
     private javax.swing.JTextField verif_ID;
     // End of variables declaration//GEN-END:variables
     int fila_select = 0;
     boolean verify_reg = false;
     String gen_selec = "";
+    Persona P = new Persona();
     List<Persona> personas = new ArrayList<>();
+    List<Persona> refFamiliares = new ArrayList<>();
     boolean verify_exist = false;
     DriverDB dbd = new DriverDB();
     String id_actual = "";
@@ -1645,5 +1864,6 @@ public class Main extends javax.swing.JFrame {
     boolean Mental = false;
     String MentalCadena = "";
     
+    List<CategoriaTrabajo> tipos = new ArrayList<>();
     
 }

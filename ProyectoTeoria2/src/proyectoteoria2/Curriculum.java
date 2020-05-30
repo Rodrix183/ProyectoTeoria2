@@ -5,6 +5,7 @@
  */
 package proyectoteoria2;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,6 +23,7 @@ public class Curriculum {
     private DatoAcademico datAcademicos;
 
     public Curriculum() {
+        expectativaLaboral = new ArrayList<>();
     }
 
     public List getExpectativaLaboral() {
