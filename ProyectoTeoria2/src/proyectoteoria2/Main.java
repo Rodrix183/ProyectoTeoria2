@@ -28,6 +28,26 @@ public class Main extends javax.swing.JFrame {
 
         Ventana_Empresas = new javax.swing.JDialog();
         jPanel11 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        ID_EmpReg = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        Name_EmpReg = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        CIF_EmpReg = new javax.swing.JTextField();
+        CEO_EmpReg = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        Pais_EmpReg = new javax.swing.JTextField();
+        Depto_EmpReg = new javax.swing.JTextField();
+        Municipio_EmpReg = new javax.swing.JTextField();
+        Colonia_EmpReg = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel57 = new javax.swing.JLabel();
         Ventana_Empleados = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -171,18 +191,159 @@ public class Main extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btnCandidatos = new javax.swing.JButton();
         btnREmpresa = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
-        jPanel11.setBackground(new java.awt.Color(0, 0, 255));
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel11.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel47.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel47.setText("Registro Empresa");
+
+        jLabel48.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel48.setText("Nombre");
+
+        jLabel49.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel49.setText("ID");
+
+        jLabel50.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel50.setText("CIF");
+
+        jLabel51.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel51.setText("CEO");
+
+        jLabel52.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel52.setText("País");
+
+        jLabel53.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel53.setText("Departamento");
+
+        jLabel54.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        jLabel54.setText("Dirección");
+
+        jLabel55.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel55.setText("Municipio");
+
+        jLabel56.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel56.setText("Ciudad/Calle/Colonia");
+
+        jButton1.setText("Registrar Empresa");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel57.setBackground(new java.awt.Color(0, 0, 102));
+        jLabel57.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel57.setText("      Volver");
+        jLabel57.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 102)));
+        jLabel57.setOpaque(true);
+        jLabel57.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel57MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel54)
+                            .addComponent(ID_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel49)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel48)
+                                    .addComponent(Name_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(117, 117, 117)
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel51)
+                                    .addComponent(jLabel50)
+                                    .addComponent(CIF_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CEO_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel53)
+                                    .addComponent(jLabel52)
+                                    .addComponent(jLabel55)
+                                    .addComponent(jLabel56))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Colonia_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Municipio_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Pais_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Depto_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGap(241, 241, 241)
+                                .addComponent(jLabel47))))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(318, 318, 318)
+                        .addComponent(jButton1)))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jLabel47)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel48)
+                    .addComponent(jLabel50))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Name_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CIF_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(jLabel51))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ID_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CEO_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addComponent(jLabel54)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52)
+                    .addComponent(Pais_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel53)
+                    .addComponent(Depto_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(Municipio_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(Colonia_EmpReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56)
+                .addComponent(jButton1)
+                .addGap(42, 42, 42))
         );
 
         javax.swing.GroupLayout Ventana_EmpresasLayout = new javax.swing.GroupLayout(Ventana_Empresas.getContentPane());
@@ -1130,8 +1291,8 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 255));
-        jPanel1.setForeground(new java.awt.Color(0, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
         btnOfertasEmpleo.setText("Ver Ofertas de Empleo");
         btnOfertasEmpleo.addActionListener(new java.awt.event.ActionListener() {
@@ -1141,7 +1302,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         btnRCandidato.setBackground(new java.awt.Color(153, 153, 255));
-        btnRCandidato.setForeground(new java.awt.Color(153, 153, 255));
+        btnRCandidato.setForeground(new java.awt.Color(0, 0, 0));
         btnRCandidato.setText("Registrar Candidato");
         btnRCandidato.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1151,8 +1312,11 @@ public class Main extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(153, 153, 255));
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Agencia de Empleos");
+
+        jSeparator1.setBackground(new java.awt.Color(153, 51, 0));
+        jSeparator1.setForeground(new java.awt.Color(153, 51, 0));
 
         btnCandidatos.setText("Ver Candidatos");
         btnCandidatos.addActionListener(new java.awt.event.ActionListener() {
@@ -1161,8 +1325,9 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        btnREmpresa.setForeground(new java.awt.Color(153, 153, 255));
-        btnREmpresa.setText("Resgistrar Empresas");
+        btnREmpresa.setBackground(new java.awt.Color(0, 0, 0));
+        btnREmpresa.setForeground(new java.awt.Color(0, 0, 0));
+        btnREmpresa.setText("Registrar Empresas");
         btnREmpresa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnREmpresaMouseClicked(evt);
@@ -1207,10 +1372,33 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCandidatos)
                     .addComponent(btnRCandidato))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 230));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 260));
+
+        jMenu1.setText("Inicio");
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText("Iniciar Sesión");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setText("Cerrar Sesión");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem3.setText("Salir");
+        jMenu1.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1224,10 +1412,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRCandidatoMouseClicked
 
     private void btnOfertasEmpleoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfertasEmpleoActionPerformed
-        //boton ver empresas
-        Ventana_Empresas.pack();
-        Ventana_Empresas.setLocationRelativeTo(this);
-        Ventana_Empresas.setVisible(true);
+        
     }//GEN-LAST:event_btnOfertasEmpleoActionPerformed
 
     private void btnCandidatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCandidatosActionPerformed
@@ -1596,7 +1781,11 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_IDTresKeyTyped
 
     private void btnREmpresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnREmpresaMouseClicked
-        // TODO add your handling code here:
+       //boton ver empresas
+        this.dispose();
+        Ventana_Empresas.pack();
+        Ventana_Empresas.setLocationRelativeTo(this);
+        Ventana_Empresas.setVisible(true);
     }//GEN-LAST:event_btnREmpresaMouseClicked
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
@@ -1624,6 +1813,52 @@ public class Main extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_box_CategoriaEmpItemStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // Registrar Empresa
+        try {
+
+            if (ID_EmpReg.getText().length() > 0 && Name_EmpReg.getText().length() > 0 && CIF_EmpReg.getText().length() > 0
+                && CEO_EmpReg.getText().length() > 0 && Pais_EmpReg.getText().length() > 0 && Depto_EmpReg.getText().length() > 0
+                && Municipio_EmpReg.getText().length() > 0 && Colonia_EmpReg.getText().length() > 0) {
+
+                String address_emp = Pais_EmpReg.getText() + ", " + Depto_EmpReg.getText() + ", " + Municipio_EmpReg.getText()
+                + ", " + Colonia_EmpReg.getText();
+                //Si no hay vacios se registra la empresa
+
+                //GLOBAL
+                Empresa em = new Empresa();
+                em.setId(ID_EmpReg.getText());
+                em.setNombre(Name_EmpReg.getText());
+                em.setCeo(CEO_EmpReg.getText());
+                em.setCif(CIF_EmpReg.getText());
+                em.getDireccion().setPais(Pais_EmpReg.getText());
+                em.getDireccion().setDepart(Depto_EmpReg.getText());
+                em.getDireccion().setMunicipio(Municipio_EmpReg.getText());
+                em.getDireccion().setColonia(Colonia_EmpReg.getText());
+
+                JOptionPane.showMessageDialog(null, "Empresa Registrada Exitosamente!");
+            } else {
+
+                JOptionPane.showMessageDialog(null, "No se ha podido registrar");
+            }
+
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel57MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel57MouseClicked
+        Ventana_Empresas.dispose();
+        this.setVisible(true);
+    }//GEN-LAST:event_jLabel57MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        //LOGIN
+        //GLOBAL
+        String usuario = "Jsandoval";
+        String password = "j12345";
+
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     public void activarControles(boolean encendido){
         if (encendido) {
@@ -1684,10 +1919,17 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton ActivoNo;
     private javax.swing.JRadioButton ActivoSi;
+    private javax.swing.JTextField CEO_EmpReg;
+    private javax.swing.JTextField CIF_EmpReg;
+    private javax.swing.JTextField Colonia_EmpReg;
+    private javax.swing.JTextField Depto_EmpReg;
     private javax.swing.JTextField IDDos;
     private javax.swing.JTextField IDTres;
     private javax.swing.JTextField IDUno;
+    private javax.swing.JTextField ID_EmpReg;
     private javax.swing.JMenuItem Modif_Emp;
+    private javax.swing.JTextField Municipio_EmpReg;
+    private javax.swing.JTextField Name_EmpReg;
     private javax.swing.JRadioButton NoAlergias;
     private javax.swing.JRadioButton NoCardiaco;
     private javax.swing.JRadioButton NoMental;
@@ -1697,6 +1939,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton No_Preso;
     private javax.swing.JPopupMenu Opciones_Emp;
     private javax.swing.JTextArea OtrosEstudios;
+    private javax.swing.JTextField Pais_EmpReg;
     private javax.swing.ButtonGroup SeleccionCardiaco;
     private javax.swing.ButtonGroup SeleccionMental;
     private javax.swing.ButtonGroup SeleccionRespira;
@@ -1733,6 +1976,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.ButtonGroup genre_Fam;
     private javax.swing.ButtonGroup genre_reg;
     private javax.swing.JTextField id_Mostrado;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1777,11 +2021,27 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
