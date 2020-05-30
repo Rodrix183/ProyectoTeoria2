@@ -184,6 +184,65 @@ public class Main extends javax.swing.JFrame {
         SeleccionRespira = new javax.swing.ButtonGroup();
         SeleccionCardiaco = new javax.swing.ButtonGroup();
         SeleccionMental = new javax.swing.ButtonGroup();
+        Ventana_OfertasEmpleo = new javax.swing.JDialog();
+        jPanel14 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        box_ListaEmpresas = new javax.swing.JComboBox<>();
+        jLabel58 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel59 = new javax.swing.JLabel();
+        Ventana_CrearOferta = new javax.swing.JDialog();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel61 = new javax.swing.JLabel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel63 = new javax.swing.JLabel();
+        tf_Sueldo = new javax.swing.JTextField();
+        jLabel68 = new javax.swing.JLabel();
+        tf_Cargo = new javax.swing.JTextField();
+        tf_AreaEmpresa = new javax.swing.JTextField();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        tf_CodeOferta = new javax.swing.JTextField();
+        tf_Vacantes = new javax.swing.JTextField();
+        jLabel62 = new javax.swing.JLabel();
+        box_TipoContratoOferta = new javax.swing.JComboBox<>();
+        box_GradoAcademico = new javax.swing.JComboBox<>();
+        jLabel70 = new javax.swing.JLabel();
+        tf_EdadOferta = new javax.swing.JTextField();
+        jLabel71 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel72 = new javax.swing.JLabel();
+        txtEmpresaAnterior_Oferta = new javax.swing.JTextField();
+        jLabel73 = new javax.swing.JLabel();
+        txtPuestoAnterior_Oferta = new javax.swing.JTextField();
+        jLabel74 = new javax.swing.JLabel();
+        spnAniosExperiemcia_Oferta = new javax.swing.JSpinner();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel67 = new javax.swing.JLabel();
+        SiAlergias_Oferta = new javax.swing.JRadioButton();
+        NoAlergias_Oferta = new javax.swing.JRadioButton();
+        jLabel75 = new javax.swing.JLabel();
+        SiRespira_Oferta = new javax.swing.JRadioButton();
+        NoRespira_Oferta = new javax.swing.JRadioButton();
+        jLabel76 = new javax.swing.JLabel();
+        SiCardiaco_Oferta = new javax.swing.JRadioButton();
+        NoCardiaco_Oferta = new javax.swing.JRadioButton();
+        JLabelMental = new javax.swing.JLabel();
+        SiMental_Oferta = new javax.swing.JRadioButton();
+        NoMental_Oferta = new javax.swing.JRadioButton();
+        jLabel69 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        genre_Oferta = new javax.swing.ButtonGroup();
+        Alergia_Oferta = new javax.swing.ButtonGroup();
+        Respiratorio_Oferta = new javax.swing.ButtonGroup();
+        Cardiaco_Oferta = new javax.swing.ButtonGroup();
+        Mental_Oferta = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         btnOfertasEmpleo = new javax.swing.JButton();
         btnRCandidato = new javax.swing.JLabel();
@@ -1288,6 +1347,456 @@ public class Main extends javax.swing.JFrame {
         });
         Opciones_Emp.add(Modif_Emp);
 
+        jPanel14.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel14.setForeground(new java.awt.Color(255, 255, 255));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable1);
+
+        jLabel58.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel58.setText("Lista de Empresas");
+
+        jButton2.setText("Crear Oferta");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel59.setBackground(new java.awt.Color(0, 0, 102));
+        jLabel59.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel59.setText("      Volver");
+        jLabel59.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 102)));
+        jLabel59.setOpaque(true);
+        jLabel59.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel59MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(jLabel58)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(box_ListaEmpresas, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(jButton2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
+            .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel58)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box_ListaEmpresas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(353, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout Ventana_OfertasEmpleoLayout = new javax.swing.GroupLayout(Ventana_OfertasEmpleo.getContentPane());
+        Ventana_OfertasEmpleo.getContentPane().setLayout(Ventana_OfertasEmpleoLayout);
+        Ventana_OfertasEmpleoLayout.setHorizontalGroup(
+            Ventana_OfertasEmpleoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ventana_OfertasEmpleoLayout.createSequentialGroup()
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        Ventana_OfertasEmpleoLayout.setVerticalGroup(
+            Ventana_OfertasEmpleoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ventana_OfertasEmpleoLayout.createSequentialGroup()
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel15.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel61.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel61.setText("Oferta");
+        jPanel15.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 83, -1, -1));
+
+        jLabel63.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel63.setText("Cargo");
+
+        jLabel68.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel68.setText("Sueldo");
+
+        jLabel66.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel66.setText("Vacantes");
+
+        jLabel65.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel65.setText("Grado Académico");
+
+        jLabel64.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel64.setText("Tipo de Contrato");
+
+        jLabel60.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel60.setText("Código");
+
+        jLabel62.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel62.setText("Área Empresa");
+
+        box_TipoContratoOferta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Indefinido", "Temporal", "Por Obra o Servicio", "Eventual", "De Internidad", "De Relevo", "De Formación y Aprendizaje", "De Prácticas" }));
+
+        box_GradoAcademico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Primaria", "Secundaria", "Superior", "PostGrado" }));
+
+        jLabel70.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel70.setText("Edad");
+
+        jLabel71.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel71.setText("Género");
+
+        genre_Oferta.add(jRadioButton1);
+        jRadioButton1.setText("Masculino");
+
+        genre_Oferta.add(jRadioButton2);
+        jRadioButton2.setText("Femenino");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addComponent(jLabel60)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel64)
+                        .addGap(208, 208, 208))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tf_CodeOferta, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel62)
+                                .addComponent(tf_AreaEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                .addComponent(tf_Cargo))
+                            .addComponent(jLabel63)
+                            .addComponent(jLabel66)
+                            .addComponent(tf_Vacantes, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(187, 187, 187)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel65)
+                                    .addComponent(box_TipoContratoOferta, 0, 190, Short.MAX_VALUE)
+                                    .addComponent(box_GradoAcademico, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap(163, Short.MAX_VALUE))
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel68)
+                                    .addComponent(tf_Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel70)
+                            .addComponent(tf_EdadOferta, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel71)
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addComponent(jRadioButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton2)))
+                        .addGap(170, 170, 170))))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                        .addComponent(jLabel70)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_EdadOferta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                        .addComponent(jLabel71)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton1)
+                            .addComponent(jRadioButton2))
+                        .addGap(2, 2, 2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel60)
+                    .addComponent(jLabel64))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_CodeOferta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box_TipoContratoOferta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addComponent(jLabel65)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box_GradoAcademico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(tf_Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addComponent(jLabel68)
+                                .addGap(32, 32, 32))))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addComponent(jLabel62)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_AreaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel63)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_Cargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel66)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_Vacantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(72, 72, 72))
+        );
+
+        jTabbedPane2.addTab("Información General", jPanel16);
+
+        jLabel72.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel72.setText("Empresa Anterior");
+
+        jLabel73.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel73.setText("Puesto Anterior");
+
+        jLabel74.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel74.setText("Años de Experiencia");
+
+        spnAniosExperiemcia_Oferta.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addComponent(txtPuestoAnterior_Oferta, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel73)
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel72)
+                                    .addComponent(txtEmpresaAnterior_Oferta, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel74, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(spnAniosExperiemcia_Oferta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(137, 137, 137))))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(jLabel72)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtEmpresaAnterior_Oferta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel73)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtPuestoAnterior_Oferta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jLabel74)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(spnAniosExperiemcia_Oferta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(218, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Experiencia Laboral", jPanel17);
+
+        jLabel67.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel67.setText("Alergias");
+
+        Alergia_Oferta.add(SiAlergias_Oferta);
+        SiAlergias_Oferta.setText("Si");
+
+        Alergia_Oferta.add(NoAlergias_Oferta);
+        NoAlergias_Oferta.setText("No");
+
+        jLabel75.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel75.setText("Problemas Respiratorios");
+
+        Respiratorio_Oferta.add(SiRespira_Oferta);
+        SiRespira_Oferta.setText("Si");
+
+        Respiratorio_Oferta.add(NoRespira_Oferta);
+        NoRespira_Oferta.setText("No");
+
+        jLabel76.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel76.setText("Problemas Cardíacos");
+
+        Cardiaco_Oferta.add(SiCardiaco_Oferta);
+        SiCardiaco_Oferta.setText("Si");
+
+        Cardiaco_Oferta.add(NoCardiaco_Oferta);
+        NoCardiaco_Oferta.setText("No");
+
+        JLabelMental.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        JLabelMental.setText("Problemas Mentales");
+
+        Mental_Oferta.add(SiMental_Oferta);
+        SiMental_Oferta.setText("Si");
+
+        Mental_Oferta.add(NoMental_Oferta);
+        NoMental_Oferta.setText("No");
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addComponent(SiAlergias_Oferta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NoAlergias_Oferta))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addComponent(SiCardiaco_Oferta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NoCardiaco_Oferta))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel67)
+                            .addComponent(jLabel76))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addComponent(SiMental_Oferta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NoMental_Oferta))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addComponent(SiRespira_Oferta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NoRespira_Oferta))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JLabelMental)
+                            .addComponent(jLabel75))))
+                .addGap(172, 172, 172))
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addComponent(jLabel67)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SiAlergias_Oferta)
+                            .addComponent(NoAlergias_Oferta)))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addComponent(jLabel75)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SiRespira_Oferta)
+                            .addComponent(NoRespira_Oferta))))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addComponent(jLabel76)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SiCardiaco_Oferta)
+                            .addComponent(NoCardiaco_Oferta)))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addComponent(JLabelMental)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SiMental_Oferta)
+                            .addComponent(NoMental_Oferta))))
+                .addContainerGap(244, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Dato Sanitario", jPanel18);
+
+        jPanel15.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 480));
+
+        jLabel69.setBackground(new java.awt.Color(0, 0, 102));
+        jLabel69.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel69.setText("      Volver");
+        jLabel69.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 102)));
+        jLabel69.setOpaque(true);
+        jLabel69.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel69MouseClicked(evt);
+            }
+        });
+        jPanel15.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 981, 65));
+
+        jButton6.setText("Confirmar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 650, -1, -1));
+
+        javax.swing.GroupLayout Ventana_CrearOfertaLayout = new javax.swing.GroupLayout(Ventana_CrearOferta.getContentPane());
+        Ventana_CrearOferta.getContentPane().setLayout(Ventana_CrearOfertaLayout);
+        Ventana_CrearOfertaLayout.setHorizontalGroup(
+            Ventana_CrearOfertaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ventana_CrearOfertaLayout.createSequentialGroup()
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 979, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
+        );
+        Ventana_CrearOfertaLayout.setVerticalGroup(
+            Ventana_CrearOfertaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ventana_CrearOfertaLayout.createSequentialGroup()
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 714, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1394,6 +1903,11 @@ public class Main extends javax.swing.JFrame {
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem3.setText("Salir");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
@@ -1412,24 +1926,26 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRCandidatoMouseClicked
 
     private void btnOfertasEmpleoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfertasEmpleoActionPerformed
-        
+        this.dispose();
+        Ventana_OfertasEmpleo.pack();
+        Ventana_OfertasEmpleo.setLocationRelativeTo(this);
+        Ventana_OfertasEmpleo.setVisible(true);
     }//GEN-LAST:event_btnOfertasEmpleoActionPerformed
 
     private void btnCandidatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCandidatosActionPerformed
         // boton ver empleados buscando empleo
         personas = dbd.getPersonas(new Document("curriculum", new BasicDBObject("$exists", true)));
-        DefaultTableModel  modelo = (DefaultTableModel) this.Tabla_Cand.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) this.Tabla_Cand.getModel();
         System.out.println(personas.size());
         for (int i = 0; i < personas.size(); i++) {
             Persona p = personas.get(i);
-            Object row[] ={
+            Object row[] = {
                 p.getId(),
-                    p.getNombre(),
-                    p.getApellido(),
-                    p.getFechaNacimiento(),
-                    p.getTelefono(),
-                    p.getCorreo(),
-            };
+                p.getNombre(),
+                p.getApellido(),
+                p.getFechaNacimiento(),
+                p.getTelefono(),
+                p.getCorreo(),};
             modelo.addRow(row);
         }
         modelo.fireTableDataChanged();
@@ -1526,7 +2042,7 @@ public class Main extends javax.swing.JFrame {
                 Activo = false;
                 ActivoCadena = "";
             }
-            
+
             //Alergias
             if (SiAlergias.isSelected()) {
                 Alergia = true;
@@ -1537,8 +2053,8 @@ public class Main extends javax.swing.JFrame {
             } else {
                 Alergia = false;
                 AlergiaCadena = "";
-            } 
-                        
+            }
+
             //Respiratorios
             if (SiRespira.isSelected()) {
                 Respirar = true;
@@ -1549,8 +2065,8 @@ public class Main extends javax.swing.JFrame {
             } else {
                 Respirar = false;
                 RespirarCadena = "";
-            } 
-                        
+            }
+
             //Cardiacos
             if (SiCardiaco.isSelected()) {
                 Cardiaco = true;
@@ -1561,8 +2077,8 @@ public class Main extends javax.swing.JFrame {
             } else {
                 Cardiaco = false;
                 CardiacoCadena = "";
-            } 
-                        
+            }
+
             //Mentales
             if (SiMental.isSelected()) {
                 Mental = true;
@@ -1573,17 +2089,17 @@ public class Main extends javax.swing.JFrame {
             } else {
                 Mental = false;
                 MentalCadena = "";
-            } 
-            
+            }
+
             SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
             String fechaCadena = sdf.format(new Date());
 
             //Validar vacios y nulos
             if (!"".equals(gen_selec) && reg_Nombre.getText().length() > 0 && reg_Apellido.getText().length() > 0 && reg_Nacionalidad.getText().length() > 0
-                && !"".equals(fechaCadena) && reg_PResidencia.getText().length() > 0 && reg_Estado.getText().length() > 0 && reg_Municipio.getText().length() > 0
-                && reg_Direccion.getText().length() > 0 && reg_Fijo.getText().length() > 0 && reg_Email.getText().length() > 0 && !"".equals(PresoCadena)
-                && !"".equals(MayorCadena) && !"".equals(LicenciaCadena) && reg_SalaryEsp.getText().length() > 0  && !"".equals(ActivoCadena) &&
-                !"".equals(AlergiaCadena) && !"".equals(RespirarCadena) && !"".equals(MentalCadena) && !"".equals(CardiacoCadena)) {
+                    && !"".equals(fechaCadena) && reg_PResidencia.getText().length() > 0 && reg_Estado.getText().length() > 0 && reg_Municipio.getText().length() > 0
+                    && reg_Direccion.getText().length() > 0 && reg_Fijo.getText().length() > 0 && reg_Email.getText().length() > 0 && !"".equals(PresoCadena)
+                    && !"".equals(MayorCadena) && !"".equals(LicenciaCadena) && reg_SalaryEsp.getText().length() > 0 && !"".equals(ActivoCadena)
+                    && !"".equals(AlergiaCadena) && !"".equals(RespirarCadena) && !"".equals(MentalCadena) && !"".equals(CardiacoCadena)) {
 
                 verify_reg = true;
                 JOptionPane.showMessageDialog(null, "Registrado con Exito");
@@ -1602,9 +2118,9 @@ public class Main extends javax.swing.JFrame {
                     idPersona = "C" + random;
                     Document d = new Document("_id", idPersona);
                     List<Persona> verifica = dbd.getPersonas(d);
-                    if (verifica.size() == 0){
+                    if (verifica.size() == 0) {
                         bandera = true;
-                    }else{
+                    } else {
                         bandera = false;
                     }
                 } while (!bandera);
@@ -1614,7 +2130,7 @@ public class Main extends javax.swing.JFrame {
                 address.setDepart(reg_Estado.getText());
                 address.setMunicipio(reg_Municipio.getText());
                 address.setColonia(reg_Direccion.getText());
-                
+
                 //Strings
                 P.setId(idPersona);
                 P.setNombre(reg_Nombre.getText());
@@ -1629,14 +2145,14 @@ public class Main extends javax.swing.JFrame {
 
                 //Direccion
                 P.setDireccion(address);
-                
+
                 //Dato Legal
                 DatoLegal dl = new DatoLegal();
                 dl.setEsMayor(Mayor);
                 dl.setEstuvoPreso(Preso);
                 dl.setTieneLicencia(Licencia);
                 P.setLegalesD(dl);
-                
+
                 //Curriculum
                 Curriculum c = new Curriculum();
                 List<String> expLaboral = new ArrayList<>();
@@ -1660,14 +2176,13 @@ public class Main extends javax.swing.JFrame {
                 da.setOtrosEstudios(estudioOtros);
                 c.setDatAcademicos(da);
                 P.setCurriculum(c);
-                
+
                 P.setDatosSanitarios(new DatosSanitarios(Alergia, Respirar, Cardiaco, Mental));
 
                 //Aqui validar lo de la identidad
                 id_actual = idPersona;
                 id_Mostrado.setText(idPersona);
-                
-                
+
                 dbd.setPersonas(P);
             } else {
                 verify_reg = false;
@@ -1717,9 +2232,9 @@ public class Main extends javax.swing.JFrame {
                 System.out.println(temp.get(0));
                 P.setRefFamiliares(temp);
             }
-        }else{
+        } else {
             if (this.verif_ID.getText() != "" && this.box_Parentesco.getSelectedItem().toString() != "" && this.reg_nomFamily.getText() != "") {
-                
+
                 String gen_selec_F = new String();
                 if (genMascFam.isSelected()) {
                     gen_selec_F = genMascFam.getText();
@@ -1736,9 +2251,9 @@ public class Main extends javax.swing.JFrame {
                 PT.setTelefono(this.tel_Fam.getText());
                 PT.setNacionalidad(this.reg_NacFam.getText());
                 PT.setCorreo(this.reg_EmailFam.getText());
-                
+
                 dbd.setPersonas(PT);
-                
+
                 P.getRefFamiliares().add(new DatoFamiliar(this.verif_ID.getText(), this.box_Parentesco.getSelectedItem().toString()));
             }
         }
@@ -1781,7 +2296,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_IDTresKeyTyped
 
     private void btnREmpresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnREmpresaMouseClicked
-       //boton ver empresas
+        //boton ver empresas
         this.dispose();
         Ventana_Empresas.pack();
         Ventana_Empresas.setLocationRelativeTo(this);
@@ -1819,11 +2334,11 @@ public class Main extends javax.swing.JFrame {
         try {
 
             if (ID_EmpReg.getText().length() > 0 && Name_EmpReg.getText().length() > 0 && CIF_EmpReg.getText().length() > 0
-                && CEO_EmpReg.getText().length() > 0 && Pais_EmpReg.getText().length() > 0 && Depto_EmpReg.getText().length() > 0
-                && Municipio_EmpReg.getText().length() > 0 && Colonia_EmpReg.getText().length() > 0) {
+                    && CEO_EmpReg.getText().length() > 0 && Pais_EmpReg.getText().length() > 0 && Depto_EmpReg.getText().length() > 0
+                    && Municipio_EmpReg.getText().length() > 0 && Colonia_EmpReg.getText().length() > 0) {
 
                 String address_emp = Pais_EmpReg.getText() + ", " + Depto_EmpReg.getText() + ", " + Municipio_EmpReg.getText()
-                + ", " + Colonia_EmpReg.getText();
+                        + ", " + Colonia_EmpReg.getText();
                 //Si no hay vacios se registra la empresa
 
                 //GLOBAL
@@ -1860,7 +2375,103 @@ public class Main extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    public void activarControles(boolean encendido){
+    private void jLabel59MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel59MouseClicked
+        // TODO add your handling code here:
+        Ventana_OfertasEmpleo.dispose();
+        this.setVisible(true);
+    }//GEN-LAST:event_jLabel59MouseClicked
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        //this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Crear Oferta
+        Ventana_CrearOferta.pack();
+        Ventana_CrearOferta.setLocationRelativeTo(this);
+        Ventana_CrearOferta.setVisible(true);
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel69MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel69MouseClicked
+        Ventana_CrearOferta.dispose();
+        Ventana_OfertasEmpleo.pack();
+        Ventana_OfertasEmpleo.setLocationRelativeTo(this);
+        Ventana_OfertasEmpleo.setVisible(true);
+    }//GEN-LAST:event_jLabel69MouseClicked
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        //Confirmar Oferta
+        try {
+            //radiobotones
+            
+            //Alergias
+            if (SiAlergias_Oferta.isSelected()) {
+                Alergia_Ofertas = true;
+                AlergiaCadena_Oferta = SiAlergias_Oferta.getText();
+            } else if (NoAlergias_Oferta.isSelected()) {
+                Alergia_Ofertas = false;
+                AlergiaCadena_Oferta = NoAlergias_Oferta.getText();
+            } else {
+                Alergia_Ofertas = false;
+                AlergiaCadena_Oferta = "";
+            }
+
+            //Respiratorios
+            if (SiRespira_Oferta.isSelected()) {
+                Respirar_Ofertas = true;
+                RespirarCadena_Oferta = SiRespira_Oferta.getText();
+            } else if (NoRespira_Oferta.isSelected()) {
+                Respirar_Ofertas = false;
+                RespirarCadena_Oferta = NoRespira_Oferta.getText();
+            } else {
+                Respirar_Ofertas = false;
+                RespirarCadena_Oferta = "";
+            }
+
+            //Cardiacos
+            if (SiCardiaco_Oferta.isSelected()) {
+                Cardiaco_Ofertas = true;
+                CardiacoCadena_Oferta = SiCardiaco_Oferta.getText();
+            } else if (NoCardiaco_Oferta.isSelected()) {
+                Cardiaco_Ofertas = false;
+                CardiacoCadena_Oferta = NoCardiaco_Oferta.getText();
+            } else {
+                Cardiaco_Ofertas = false;
+                CardiacoCadena_Oferta = "";
+            }
+
+            //Mentales
+            if (SiMental_Oferta.isSelected()) {
+                Mental_Ofertas = true;
+                MentalCadena_Oferta = SiMental_Oferta.getText();
+            } else if (NoMental_Oferta.isSelected()) {
+                Mental_Ofertas = false;
+                MentalCadena_Oferta = NoMental_Oferta.getText();
+            } else {
+                Mental_Ofertas = false;
+                MentalCadena_Oferta = "";
+            }
+            
+            //validacion de no vacios y no nulos
+            if (tf_EdadOferta.getText().length() > 0 && tf_CodeOferta.getText().length() > 0 && tf_AreaEmpresa.getText().length() > 0
+                && tf_Cargo.getText().length() > 0 && tf_Vacantes.getText().length() > 0 && tf_Sueldo.getText().length() > 0 && !"".equals(AlergiaCadena_Oferta)
+                && !"".equals(CardiacoCadena_Oferta) && !"".equals(RespirarCadena_Oferta) && !"".equals(MentalCadena_Oferta)) {
+                
+                
+                
+                
+                JOptionPane.showMessageDialog(this, "Oferta Creada!");
+            }else{
+                JOptionPane.showMessageDialog(this, "Datos Invalidos! Revise Nuevamente");
+            }
+            
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    public void activarControles(boolean encendido) {
         if (encendido) {
             this.reg_nomFamily.setEnabled(false);
             this.reg_LNameFam.setEnabled(false);
@@ -1870,7 +2481,7 @@ public class Main extends javax.swing.JFrame {
             this.tel_Fam.setEnabled(false);
             this.reg_EmailFam.setEnabled(false);
             this.fechaNacReg.setEnabled(false);
-        }else{
+        } else {
             this.reg_nomFamily.setEnabled(true);
             this.reg_LNameFam.setEnabled(true);
             this.reg_NacFam.setEnabled(true);
@@ -1881,9 +2492,7 @@ public class Main extends javax.swing.JFrame {
             this.fechaNacReg.setEnabled(true);
         }
     }
-    
-    
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1919,47 +2528,65 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton ActivoNo;
     private javax.swing.JRadioButton ActivoSi;
+    private javax.swing.ButtonGroup Alergia_Oferta;
     private javax.swing.JTextField CEO_EmpReg;
     private javax.swing.JTextField CIF_EmpReg;
+    private javax.swing.ButtonGroup Cardiaco_Oferta;
     private javax.swing.JTextField Colonia_EmpReg;
     private javax.swing.JTextField Depto_EmpReg;
     private javax.swing.JTextField IDDos;
     private javax.swing.JTextField IDTres;
     private javax.swing.JTextField IDUno;
     private javax.swing.JTextField ID_EmpReg;
+    private javax.swing.JLabel JLabelMental;
+    private javax.swing.ButtonGroup Mental_Oferta;
     private javax.swing.JMenuItem Modif_Emp;
     private javax.swing.JTextField Municipio_EmpReg;
     private javax.swing.JTextField Name_EmpReg;
     private javax.swing.JRadioButton NoAlergias;
+    private javax.swing.JRadioButton NoAlergias_Oferta;
     private javax.swing.JRadioButton NoCardiaco;
+    private javax.swing.JRadioButton NoCardiaco_Oferta;
     private javax.swing.JRadioButton NoMental;
+    private javax.swing.JRadioButton NoMental_Oferta;
     private javax.swing.JRadioButton NoRespira;
+    private javax.swing.JRadioButton NoRespira_Oferta;
     private javax.swing.JRadioButton No_Licencia;
     private javax.swing.JRadioButton No_Mayor;
     private javax.swing.JRadioButton No_Preso;
     private javax.swing.JPopupMenu Opciones_Emp;
     private javax.swing.JTextArea OtrosEstudios;
     private javax.swing.JTextField Pais_EmpReg;
+    private javax.swing.ButtonGroup Respiratorio_Oferta;
     private javax.swing.ButtonGroup SeleccionCardiaco;
     private javax.swing.ButtonGroup SeleccionMental;
     private javax.swing.ButtonGroup SeleccionRespira;
     private javax.swing.JRadioButton SiAlergias;
+    private javax.swing.JRadioButton SiAlergias_Oferta;
     private javax.swing.JRadioButton SiCardiaco;
+    private javax.swing.JRadioButton SiCardiaco_Oferta;
     private javax.swing.JRadioButton SiMental;
+    private javax.swing.JRadioButton SiMental_Oferta;
     private javax.swing.JRadioButton SiRespira;
+    private javax.swing.JRadioButton SiRespira_Oferta;
     private javax.swing.JRadioButton Si_Licencia;
     private javax.swing.JRadioButton Si_Mayor;
     private javax.swing.JRadioButton Si_Preso;
     private javax.swing.JTable Tabla_AplCandidato;
     private javax.swing.JTable Tabla_Cand;
+    private javax.swing.JDialog Ventana_CrearOferta;
     private javax.swing.JDialog Ventana_Curriculum;
     private javax.swing.JDialog Ventana_Empleados;
     private javax.swing.JDialog Ventana_Empresas;
+    private javax.swing.JDialog Ventana_OfertasEmpleo;
     private javax.swing.JComboBox<String> box_CategoriaEmp;
     private javax.swing.JComboBox<String> box_ExpectativaLab;
+    private javax.swing.JComboBox<String> box_GradoAcademico;
     private javax.swing.JComboBox<String> box_GradoAcademy;
+    private javax.swing.JComboBox<String> box_ListaEmpresas;
     private javax.swing.JComboBox<String> box_Parentesco;
     private javax.swing.JComboBox<String> box_TipoContrato;
+    private javax.swing.JComboBox<String> box_TipoContratoOferta;
     private javax.swing.JButton btnCandidatos;
     private javax.swing.JButton btnOfertasEmpleo;
     private javax.swing.JLabel btnRCandidato;
@@ -1974,12 +2601,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton genMasc;
     private javax.swing.JRadioButton genMascFam;
     private javax.swing.ButtonGroup genre_Fam;
+    private javax.swing.ButtonGroup genre_Oferta;
     private javax.swing.ButtonGroup genre_reg;
     private javax.swing.JTextField id_Mostrado;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2033,8 +2663,27 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
@@ -2047,6 +2696,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2055,12 +2709,17 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
     private java.awt.Label lbl_Verify;
     private javax.swing.JList<String> listaFamiliares;
     private javax.swing.JTextField reg_Apellido;
@@ -2083,9 +2742,18 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.ButtonGroup seleccionMayor;
     private javax.swing.ButtonGroup seleccionPreso;
     private javax.swing.JSpinner spnAniosExperiemcia;
+    private javax.swing.JSpinner spnAniosExperiemcia_Oferta;
     private javax.swing.JTextField tel_Fam;
+    private javax.swing.JTextField tf_AreaEmpresa;
+    private javax.swing.JTextField tf_Cargo;
+    private javax.swing.JTextField tf_CodeOferta;
+    private javax.swing.JTextField tf_EdadOferta;
+    private javax.swing.JTextField tf_Sueldo;
+    private javax.swing.JTextField tf_Vacantes;
     private javax.swing.JTextField txtEmpresaAnterior;
+    private javax.swing.JTextField txtEmpresaAnterior_Oferta;
     private javax.swing.JTextField txtPuestoAnterior;
+    private javax.swing.JTextField txtPuestoAnterior_Oferta;
     private javax.swing.JTextField verif_ID;
     // End of variables declaration//GEN-END:variables
     int fila_select = 0;
@@ -2103,27 +2771,47 @@ public class Main extends javax.swing.JFrame {
     String MayorCadena = "";
     String PresoCadena = "";
     String LicenciaCadena = "";
-    
+
     //Activo
     boolean Activo = false;
     String ActivoCadena = "";
-    
+
     //Alergias
     boolean Alergia = false;
     String AlergiaCadena = "";
-    
+
     //Respiratorios
     boolean Respirar = false;
     String RespirarCadena = "";
-    
+
     //Cardiacos
     boolean Cardiaco = false;
     String CardiacoCadena = "";
-    
+
     //Mentales
     boolean Mental = false;
     String MentalCadena = "";
-    
+
     List<CategoriaTrabajo> tipos = new ArrayList<>();
-    
+
+    //OFERTAS
+    //Activo
+    boolean Activo_Oferta = false;
+    String ActivoCadena_Oferta = "";
+
+    //Alergias
+    boolean Alergia_Ofertas = false;
+    String AlergiaCadena_Oferta = "";
+
+    //Respiratorios
+    boolean Respirar_Ofertas = false;
+    String RespirarCadena_Oferta = "";
+
+    //Cardiacos
+    boolean Cardiaco_Ofertas = false;
+    String CardiacoCadena_Oferta = "";
+
+    //Mentales
+    boolean Mental_Ofertas = false;
+    String MentalCadena_Oferta = "";
 }
