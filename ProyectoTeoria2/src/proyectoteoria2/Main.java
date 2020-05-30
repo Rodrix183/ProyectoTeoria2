@@ -17,6 +17,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(this);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -690,8 +691,6 @@ public class Main extends javax.swing.JFrame {
 
         jLabel2.setText("Categoría Empleado");
 
-        box_CategoriaEmp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CEO - Director Ejecutivo", "COO - Director de Operaciones", "CSO - Director Comercial", "CMO - Director de Marketing", "CHRO - Director de Recursos Humanos", "CS - Éxito del Cliente", "CFO - Director Financiero" }));
-
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -702,8 +701,8 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(reg_SalaryEsp, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16)
                     .addComponent(jLabel2)
-                    .addComponent(box_CategoriaEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                    .addComponent(box_CategoriaEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel27)
                     .addComponent(jLabel26)
@@ -1646,5 +1645,5 @@ public class Main extends javax.swing.JFrame {
     boolean Mental = false;
     String MentalCadena = "";
     
-    //
+    
 }

@@ -973,9 +973,9 @@
                                   <Component id="reg_SalaryEsp" alignment="0" min="-2" pref="129" max="-2" attributes="0"/>
                                   <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="box_CategoriaEmp" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="box_CategoriaEmp" alignment="0" min="-2" pref="231" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="115" max="32767" attributes="0"/>
+                              <EmptySpace pref="135" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
@@ -1069,15 +1069,7 @@
                     <Component class="javax.swing.JComboBox" name="box_CategoriaEmp">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="7">
-                            <StringItem index="0" value="CEO - Director Ejecutivo"/>
-                            <StringItem index="1" value="COO - Director de Operaciones"/>
-                            <StringItem index="2" value="CSO - Director Comercial"/>
-                            <StringItem index="3" value="CMO - Director de Marketing"/>
-                            <StringItem index="4" value="CHRO - Director de Recursos Humanos"/>
-                            <StringItem index="5" value="CS - &#xc9;xito del Cliente"/>
-                            <StringItem index="6" value="CFO - Director Financiero"/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
                       </Properties>
                       <AuxValues>
