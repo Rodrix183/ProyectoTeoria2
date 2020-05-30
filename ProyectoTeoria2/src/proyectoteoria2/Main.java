@@ -1251,12 +1251,75 @@ public class Main extends javax.swing.JFrame {
                 LicenciaCadena = "";
             }
 
+            //Activo
+            if (ActivoSi.isSelected()) {
+                Activo = true;
+                ActivoCadena = ActivoSi.getText();
+            } else if (ActivoNo.isSelected()) {
+                Activo = false;
+                ActivoCadena = ActivoNo.getText();
+            } else {
+                Activo = false;
+                ActivoCadena = "";
+            }
+            
+            //Alergias
+            if (SiAlergias.isSelected()) {
+                Alergia = true;
+                AlergiaCadena = SiAlergias.getText();
+            } else if (NoAlergias.isSelected()) {
+                Alergia = false;
+                AlergiaCadena = NoAlergias.getText();
+            } else {
+                Alergia = false;
+                AlergiaCadena = "";
+            } 
+                        
+            //Respiratorios
+            if (SiRespira.isSelected()) {
+                Respirar = true;
+                RespirarCadena = SiRespira.getText();
+            } else if (NoRespira.isSelected()) {
+                Respirar = false;
+                RespirarCadena = NoRespira.getText();
+            } else {
+                Respirar = false;
+                RespirarCadena = "";
+            } 
+                        
+            //Cardiacos
+            if (SiCardiaco.isSelected()) {
+                Cardiaco = true;
+                CardiacoCadena = SiCardiaco.getText();
+            } else if (NoCardiaco.isSelected()) {
+                Cardiaco = false;
+                CardiacoCadena = NoCardiaco.getText();
+            } else {
+                Cardiaco = false;
+                CardiacoCadena = "";
+            } 
+                        
+            //Mentales
+            if (SiMental.isSelected()) {
+                Mental = true;
+                MentalCadena = SiMental.getText();
+            } else if (NoMental.isSelected()) {
+                Mental = false;
+                MentalCadena = NoMental.getText();
+            } else {
+                Mental = false;
+                MentalCadena = "";
+            } 
+            
             SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
             String fechaCadena = sdf.format(new Date());
+
+            //Validar vacios y nulos
             if (!"".equals(gen_selec) && reg_Nombre.getText().length() > 0 && reg_Apellido.getText().length() > 0 && reg_Nacionalidad.getText().length() > 0
-                    && !"".equals(fechaCadena) && reg_PResidencia.getText().length() > 0 && reg_Estado.getText().length() > 0 && reg_Municipio.getText().length() > 0
-                    && reg_Direccion.getText().length() > 0 && reg_Fijo.getText().length() > 0 && reg_Email.getText().length() > 0 && !"".equals(PresoCadena)
-                    && !"".equals(MayorCadena) && !"".equals(LicenciaCadena)) {
+                && !"".equals(fechaCadena) && reg_PResidencia.getText().length() > 0 && reg_Estado.getText().length() > 0 && reg_Municipio.getText().length() > 0
+                && reg_Direccion.getText().length() > 0 && reg_Fijo.getText().length() > 0 && reg_Email.getText().length() > 0 && !"".equals(PresoCadena)
+                && !"".equals(MayorCadena) && !"".equals(LicenciaCadena) && reg_SalaryEsp.getText().length() > 0 && !"".equals(ActivoCadena) &&
+                !"".equals(AlergiaCadena) && !"".equals(RespirarCadena) && !"".equals(MentalCadena) && !"".equals(CardiacoCadena)) {
 
                 verify_reg = true;
                 JOptionPane.showMessageDialog(null, "Registrado con Exito");
@@ -1283,11 +1346,7 @@ public class Main extends javax.swing.JFrame {
                 address.setDepart(idPersona);
                 address.setMunicipio(gen_selec);
                 address.setColonia(idPersona);
-//                String pais = address.getPais();
-//                String depto = address.getDepart();
-//                String muni = address.getMunicipio();
-//                String barrio = address.getColonia();
-
+                
                 //Strings
                 P.setId(idPersona);
                 P.setNombre(reg_Nombre.getText());
@@ -1307,6 +1366,7 @@ public class Main extends javax.swing.JFrame {
                 id_actual = idPersona;
                 id_Mostrado.setText(idPersona);
 
+                
             } else {
                 verify_reg = false;
                 JOptionPane.showMessageDialog(null, "Error al registrarse!");
@@ -1565,4 +1625,26 @@ public class Main extends javax.swing.JFrame {
     String MayorCadena = "";
     String PresoCadena = "";
     String LicenciaCadena = "";
+    
+    //Activo
+    boolean Activo = false;
+    String ActivoCadena = "";
+    
+    //Alergias
+    boolean Alergia = false;
+    String AlergiaCadena = "";
+    
+    //Respiratorios
+    boolean Respirar = false;
+    String RespirarCadena = "";
+    
+    //Cardiacos
+    boolean Cardiaco = false;
+    String CardiacoCadena = "";
+    
+    //Mentales
+    boolean Mental = false;
+    String MentalCadena = "";
+    
+    //
 }
